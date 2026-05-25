@@ -1,0 +1,1311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Krause & Krause — Two ways we work together</title>
+<meta name="description" content="Two priced, productised engagements. The B2B Sales Sprint (€9,500, 8 weeks) and the Embedded Revenue Operator (€4,500/month). Both come with guarantees in writing." />
+
+<meta property="og:title" content="Krause & Krause — Two ways we work together" />
+<meta property="og:description" content="The Sprint and the Operator. Priced, productised, and guaranteed in writing." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://renerichardkrause-ops.github.io/krause-and-krause/offers.html" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper:        #efe8d8;
+    --paper-warm:   #e7dfcb;
+    --paper-deep:   #ddd2b8;
+    --ink:          #1a1612;
+    --ink-soft:     #3b342c;
+    --ink-mute:     #6b6155;
+    --rule:         rgba(26, 22, 18, 0.14);
+    --rule-strong:  rgba(26, 22, 18, 0.28);
+    --accent:       #8a3a1c;
+    --accent-deep:  #5e2810;
+    --highlight:    #c8a05a;
+
+    --display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+    --body:    "IBM Plex Sans", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.55;
+    letter-spacing: 0.005em;
+    background-image:
+      radial-gradient(ellipse 1200px 600px at 80% -10%, rgba(138, 58, 28, 0.06), transparent 60%),
+      radial-gradient(ellipse 1000px 500px at -10% 110%, rgba(200, 160, 90, 0.07), transparent 60%);
+    background-attachment: fixed;
+    font-variant-numeric: tabular-nums;
+  }
+
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.10  0 0 0 0 0.08  0 0 0 0 0.06  0 0 0 0.07 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    z-index: 1;
+  }
+
+  main, header, footer { position: relative; z-index: 2; }
+  ::selection { background: var(--accent); color: var(--paper); }
+  a { color: inherit; text-decoration: none; }
+  a.link { color: var(--accent); border-bottom: 1px solid currentColor; padding-bottom: 1px; transition: color 0.2s ease; }
+  a.link:hover { color: var(--accent-deep); }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+  .wrap-narrow { max-width: 880px; margin: 0 auto; padding: 0 32px; }
+
+  /* ---------- Nav (shared) ---------- */
+  header.nav { padding-top: 28px; padding-bottom: 28px; }
+  .nav-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 18px;
+  }
+  .wordmark {
+    font-family: var(--display);
+    font-size: 22px;
+    letter-spacing: 0.01em;
+  }
+  .wordmark .amp { font-style: italic; color: var(--accent); padding: 0 0.15em; }
+  .nav-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    display: flex;
+    gap: 28px;
+  }
+  .nav-meta a { transition: color 0.2s ease; }
+  .nav-meta a:hover { color: var(--ink); }
+  .nav-meta a.active { color: var(--ink); }
+  .nav-meta a.active::after {
+    content: "";
+    display: inline-block;
+    width: 4px; height: 4px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-left: 8px;
+    transform: translateY(-3px);
+  }
+  .nav-meta .dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+    transform: translateY(-1px);
+  }
+
+  /* ---------- Hero ---------- */
+  .offers-hero {
+    padding-top: 72px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 36px;
+    height: 1px;
+    background: var(--accent);
+  }
+  h1.offers-headline {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(56px, 8.5vw, 116px);
+    line-height: 0.96;
+    letter-spacing: -0.018em;
+    margin: 0 0 32px;
+    max-width: 16ch;
+  }
+  h1.offers-headline em { font-style: italic; color: var(--accent); }
+  .offers-lede {
+    font-family: var(--display);
+    font-size: clamp(22px, 2.2vw, 28px);
+    line-height: 1.32;
+    color: var(--ink-soft);
+    font-weight: 400;
+    max-width: 36ch;
+    margin: 0 0 48px;
+  }
+
+  .offer-jump {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 56px;
+  }
+  .offer-jump a {
+    display: block;
+    padding: 28px 28px 26px;
+    border: 1px solid var(--rule-strong);
+    background: rgba(255, 253, 245, 0.4);
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  }
+  .offer-jump a:hover {
+    background: rgba(255, 253, 245, 0.85);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .offer-jump .num {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .offer-jump .name {
+    font-family: var(--display);
+    font-size: 32px;
+    line-height: 1.05;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+  .offer-jump .meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--ink-mute);
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+  }
+  .offer-jump .meta strong {
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .offer-jump .arr {
+    display: inline-block;
+    margin-left: 8px;
+    transition: transform 0.25s ease;
+  }
+  .offer-jump a:hover .arr { transform: translateX(4px); }
+
+  /* ---------- Offer section ---------- */
+  .offer {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    border-bottom: 1px solid var(--rule);
+    scroll-margin-top: 24px;
+  }
+
+  .offer-head {
+    margin-bottom: 80px;
+  }
+  .offer-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 28px;
+  }
+  .offer-label .num { color: var(--accent); margin-right: 10px; }
+  .offer-head h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(48px, 6.4vw, 88px);
+    line-height: 0.98;
+    letter-spacing: -0.018em;
+    margin: 0 0 36px;
+    max-width: 14ch;
+  }
+  .offer-head h2 em { font-style: italic; color: var(--accent); }
+  .promise {
+    font-family: var(--display);
+    font-size: clamp(22px, 2.3vw, 30px);
+    line-height: 1.32;
+    color: var(--ink);
+    font-weight: 400;
+    max-width: 38ch;
+    margin: 0;
+    padding-left: 28px;
+    border-left: 2px solid var(--accent);
+  }
+  .promise em { font-style: italic; color: var(--accent); }
+
+  /* ---------- Stack table (ledger) ---------- */
+  .block {
+    margin-top: 72px;
+  }
+  .block-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  .block-title {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1;
+    margin: 0;
+    letter-spacing: -0.005em;
+  }
+  .block-title em { color: var(--accent); font-style: italic; }
+  .block-rhs {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  .stack {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .stack-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 140px;
+    align-items: baseline;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+    gap: 24px;
+  }
+  .stack-row:last-child { border-bottom: 1px solid var(--rule-strong); }
+  .stack-row .idx {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+  }
+  .stack-row .body { padding-right: 12px; }
+  .stack-row .name {
+    font-family: var(--display);
+    font-size: 22px;
+    line-height: 1.2;
+    margin: 0 0 6px;
+    letter-spacing: -0.005em;
+  }
+  .stack-row .desc {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 58ch;
+  }
+  .stack-row .val {
+    font-family: var(--mono);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    text-align: right;
+    letter-spacing: 0.01em;
+  }
+  .stack-row .val .lbl {
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 400;
+  }
+  .stack-row.partner .idx { color: var(--ink-mute); }
+  .stack-row.partner .name::after {
+    content: "REVO";
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 2px 6px 1px;
+    margin-left: 14px;
+    vertical-align: middle;
+    border-radius: 2px;
+  }
+
+  .stack-foot {
+    display: grid;
+    grid-template-columns: 60px 1fr 140px;
+    gap: 24px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--ink);
+  }
+  .stack-foot .lbl {
+    grid-column: 2;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    align-self: end;
+  }
+  .stack-foot .val {
+    font-family: var(--display);
+    font-size: 28px;
+    text-align: right;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  /* ---------- Price reveal ---------- */
+  .price-reveal {
+    margin-top: 56px;
+    padding: 48px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .price-reveal .value-side .lbl {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .price-reveal .value-side .amt {
+    font-family: var(--display);
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1;
+    color: var(--ink-soft);
+    position: relative;
+    display: inline-block;
+  }
+  .price-reveal .value-side .amt::after {
+    content: "";
+    position: absolute;
+    left: -4%;
+    right: -4%;
+    top: 52%;
+    height: 3px;
+    background: var(--accent);
+    transform: rotate(-3deg) scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.8s cubic-bezier(.7,.1,.2,1) 0.3s;
+  }
+  .price-reveal.in .value-side .amt::after { transform: rotate(-3deg) scaleX(1); }
+
+  .price-reveal .price-side .lbl {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .price-reveal .price-side .amt {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: clamp(56px, 7.2vw, 96px);
+    line-height: 1;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .price-reveal .price-side .sub {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--ink-mute);
+    margin-top: 14px;
+    display: block;
+  }
+
+  /* ---------- Guarantee ---------- */
+  .guarantee {
+    margin-top: 72px;
+    padding: 48px 56px;
+    background: rgba(138, 58, 28, 0.045);
+    border: 1px solid rgba(138, 58, 28, 0.18);
+    position: relative;
+  }
+  .guarantee::before {
+    content: "GUARANTEE";
+    position: absolute;
+    top: -10px;
+    left: 32px;
+    background: var(--paper);
+    padding: 2px 14px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    border: 1px solid rgba(138, 58, 28, 0.5);
+  }
+  .guarantee p {
+    font-family: var(--display);
+    font-size: clamp(20px, 2vw, 26px);
+    line-height: 1.4;
+    color: var(--ink);
+    margin: 0;
+    font-style: italic;
+  }
+  .guarantee p strong {
+    font-style: normal;
+    font-weight: 400;
+    color: var(--accent);
+  }
+
+  /* ---------- Scarcity ---------- */
+  .scarcity {
+    margin-top: 36px;
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--ink-mute);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .scarcity::before {
+    content: "";
+    width: 24px; height: 24px;
+    border: 1px solid var(--ink-mute);
+    border-radius: 50%;
+    background:
+      conic-gradient(var(--accent) 0deg 270deg, transparent 270deg 360deg);
+    mask: radial-gradient(circle, transparent 6px, black 7px);
+    -webkit-mask: radial-gradient(circle, transparent 6px, black 7px);
+    flex-shrink: 0;
+  }
+
+  /* ---------- Timeline ---------- */
+  .timeline {
+    margin-top: 80px;
+  }
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .tline-step {
+    padding: 28px 24px 28px 0;
+    border-top: 1px solid var(--rule-strong);
+    border-right: 1px solid var(--rule);
+    position: relative;
+  }
+  .tline-step:last-child { border-right: none; padding-right: 0; }
+  .tline-step:first-child { padding-left: 0; }
+  .tline-step:not(:first-child) { padding-left: 24px; }
+  .tline-step .wk {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+    display: block;
+  }
+  .tline-step h5 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.15;
+    margin: 0 0 10px;
+    letter-spacing: -0.005em;
+  }
+  .tline-step p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0;
+    line-height: 1.45;
+  }
+
+  /* ---------- Fit two-col ---------- */
+  .fit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    margin-top: 72px;
+  }
+  .fit-col h5 {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin: 0 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .fit-col h5 .dot { width: 7px; height: 7px; border-radius: 50%; }
+  .fit-col.yes h5 .dot { background: var(--accent); }
+  .fit-col.no  h5 .dot { background: var(--rule-strong); }
+  .fit-col ul { list-style: none; padding: 0; margin: 0; }
+  .fit-col li {
+    padding: 16px 0;
+    border-top: 1px solid var(--rule);
+    color: var(--ink-soft);
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+    font-size: 15.5px;
+  }
+  .fit-col li:last-child { border-bottom: 1px solid var(--rule); }
+  .fit-col li .mark {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1;
+    width: 14px;
+    flex-shrink: 0;
+  }
+  .fit-col.yes li .mark { color: var(--accent); }
+  .fit-col.no  li .mark { color: var(--ink-mute); }
+
+  /* ---------- CTA row ---------- */
+  .offer-cta {
+    margin-top: 72px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--body);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 18px 28px;
+    background: var(--ink);
+    color: var(--paper);
+    border: 1px solid var(--ink);
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .btn:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
+  .btn .arr { transition: transform 0.25s ease; }
+  .btn:hover .arr { transform: translateX(4px); }
+  .offer-cta .micro {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--ink-mute);
+    letter-spacing: 0.04em;
+  }
+
+  /* ---------- Compare / which fits ---------- */
+  .compare {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .compare h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(44px, 5.4vw, 72px);
+    line-height: 1;
+    margin: 0 0 56px;
+    letter-spacing: -0.018em;
+    max-width: 20ch;
+  }
+  .compare h2 em { font-style: italic; color: var(--accent); }
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr 1fr;
+    gap: 32px;
+  }
+  .compare-grid .row {
+    display: contents;
+  }
+  .compare-grid .cell {
+    padding: 22px 0;
+    border-top: 1px solid var(--rule);
+    font-size: 15.5px;
+    color: var(--ink-soft);
+  }
+  .compare-grid .row.head .cell {
+    border-top: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 18px;
+    font-family: var(--display);
+    font-size: 26px;
+    color: var(--ink);
+  }
+  .compare-grid .row.head .cell.label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-mute); padding-top: 0; }
+  .compare-grid .cell.label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    padding-right: 12px;
+  }
+  .compare-grid .cell em { color: var(--accent); font-style: italic; }
+
+  /* ---------- Contact ---------- */
+  .contact {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 64px;
+    align-items: end;
+  }
+  .contact h2 {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(48px, 6vw, 84px);
+    line-height: 1;
+    letter-spacing: -0.018em;
+    margin: 0 0 28px;
+  }
+  .contact h2 em { color: var(--accent); font-style: italic; }
+  .contact .sub {
+    font-family: var(--display);
+    font-size: 22px;
+    line-height: 1.4;
+    color: var(--ink-soft);
+    margin: 0 0 36px;
+    max-width: 30ch;
+  }
+  .contact-details {
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+  .contact-details .lbl {
+    color: var(--ink-mute);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 14px;
+  }
+  .contact-details .lbl:first-child { margin-top: 0; }
+  .contact-details a:hover { color: var(--accent); }
+
+  /* ---------- Footer ---------- */
+  footer {
+    padding: 36px 0 48px;
+    border-top: 1px solid var(--rule);
+  }
+  .foot-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .foot-row .right { text-align: right; }
+
+  /* ---------- Reveal animation ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.9s cubic-bezier(.2,.7,.2,1), transform 0.9s cubic-bezier(.2,.7,.2,1);
+  }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 960px) {
+    .offer-jump { grid-template-columns: 1fr; gap: 16px; }
+    .stack-row { grid-template-columns: 40px 1fr 110px; gap: 14px; }
+    .stack-foot { grid-template-columns: 40px 1fr 110px; }
+    .price-reveal { grid-template-columns: 1fr; gap: 24px; }
+    .timeline-grid { grid-template-columns: 1fr 1fr; }
+    .tline-step { padding-left: 0 !important; padding-right: 0 !important; border-right: none; }
+    .fit-grid { grid-template-columns: 1fr; gap: 40px; }
+    .compare-grid { grid-template-columns: 1fr; gap: 4px; }
+    .compare-grid .cell { border-top: 1px solid var(--rule); }
+    .compare-grid .cell.label { padding-bottom: 0; padding-top: 22px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+    .offer { padding-top: 80px; padding-bottom: 80px; }
+    .guarantee { padding: 36px 28px; }
+  }
+  @media (max-width: 560px) {
+    .wrap, .wrap-narrow { padding: 0 22px; }
+    .nav-meta { gap: 16px; font-size: 10px; }
+    .stack-row { grid-template-columns: 1fr 80px; gap: 12px; }
+    .stack-row .idx { grid-column: 1; font-size: 10px; margin-bottom: -8px; }
+    .stack-row .body { grid-column: 1; }
+    .stack-row .val { grid-column: 2; grid-row: 1 / span 2; align-self: start; }
+    .stack-foot { grid-template-columns: 1fr 80px; }
+    .stack-foot .lbl { grid-column: 1; }
+    .timeline-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <div class="nav-row">
+      <a href="index.html"><div class="wordmark">Krause <span class="amp">&</span> Krause</div></a>
+      <nav class="nav-meta">
+        <a href="index.html#practice">Practice</a>
+        <a href="offers.html" class="active">Offers</a>
+        <a href="index.html#approach">Approach</a>
+        <a href="index.html#contact"><span class="dot"></span>Get in touch</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="offers-hero">
+    <div class="wrap">
+      <div class="eyebrow reveal">Engagements · Priced &amp; productised</div>
+      <h1 class="offers-headline reveal" style="transition-delay: 80ms;">Two ways we work <em>together.</em></h1>
+      <p class="offers-lede reveal" style="transition-delay: 160ms;">Both have a fixed scope. Both are billed against deliverables, not hours. Both come with a guarantee in writing — and the right to walk away.</p>
+
+      <div class="offer-jump reveal" style="transition-delay: 240ms;">
+        <a href="#sprint">
+          <span class="num">— I · Fixed fee</span>
+          <h3 class="name">The B2B Sales Sprint <span class="arr">→</span></h3>
+          <p style="margin:0; color: var(--ink-soft); font-size: 15px; line-height: 1.5;">A focused 8-week intervention that takes a B2B team from a 20% to 35%+ close rate.</p>
+          <div class="meta"><span>€9,500 · fixed</span><strong>8 weeks</strong></div>
+        </a>
+        <a href="#operator">
+          <span class="num">— II · Retainer</span>
+          <h3 class="name">Embedded Revenue Operator <span class="arr">→</span></h3>
+          <p style="margin:0; color: var(--ink-soft); font-size: 15px; line-height: 1.5;">One day a week inside your business as the de-facto Head of Revenue.</p>
+          <div class="meta"><span>€4,500/mo</span><strong>6-month min</strong></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OFFER 1 — THE SPRINT ============ -->
+  <section class="offer" id="sprint">
+    <div class="wrap-narrow">
+      <div class="offer-head reveal">
+        <div class="offer-label"><span class="num">— I</span>Fixed fee · 8 weeks · Two slots at a time</div>
+        <h2>The B2B Sales <em>Sprint.</em></h2>
+        <p class="promise">Take your B2B sales team from a <em>20% close rate</em> to <em>35%+</em> in eight weeks. Without hiring new reps. Without new tools. Without you running the engagement.</p>
+      </div>
+
+      <!-- Fit -->
+      <div class="fit-grid reveal">
+        <div class="fit-col yes">
+          <h5><span class="dot"></span>This is built for you if</h5>
+          <ul>
+            <li><span class="mark">+</span><span>You have 2–10 sales reps, or you're personally the Head of Sales by default.</span></li>
+            <li><span class="mark">+</span><span>Your B2B close rate sits in the 15–25% range and feels stuck there.</span></li>
+            <li><span class="mark">+</span><span>You sell deals in the €10k–€300k band, with cycles of 2–12 weeks.</span></li>
+            <li><span class="mark">+</span><span>Your team is good on product but freezes on negotiation, follow-up, and closing.</span></li>
+          </ul>
+        </div>
+        <div class="fit-col no">
+          <h5><span class="dot"></span>This is not built for you if</h5>
+          <ul>
+            <li><span class="mark">—</span><span>You want me to run paid ads or "do your marketing".</span></li>
+            <li><span class="mark">—</span><span>You're hoping for a generic webinar-style sales training.</span></li>
+            <li><span class="mark">—</span><span>You're not personally willing to be in the weekly revenue meeting.</span></li>
+            <li><span class="mark">—</span><span>You'd rather hire a fractional CRO who's never personally closed a real deal.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- What you get -->
+      <div class="block reveal">
+        <div class="block-head">
+          <h3 class="block-title">What you get <em>over eight weeks</em></h3>
+          <div class="block-rhs">Stated value</div>
+        </div>
+        <div class="stack">
+          <div class="stack-row">
+            <div class="idx">— 01</div>
+            <div class="body">
+              <h4 class="name">Full sales-process diagnostic</h4>
+              <p class="desc">A line-by-line read of your last 50 closed and lost deals, plus shadowing 10 live calls. You'll see where you actually lose deals — usually not where you think.</p>
+            </div>
+            <div class="val"><span class="lbl">Stated value</span>€3,500</div>
+          </div>
+          <div class="stack-row">
+            <div class="idx">— 02</div>
+            <div class="body">
+              <h4 class="name">Custom B2B sales playbook</h4>
+              <p class="desc">Qualification, discovery, objection handling and follow-up cadence — written specifically for your product, your buyers and your sales motion. The team uses this, not a binder on a shelf.</p>
+            </div>
+            <div class="val"><span class="lbl">Stated value</span>€4,000</div>
+          </div>
+          <div class="stack-row">
+            <div class="idx">— 03</div>
+            <div class="body">
+              <h4 class="name">Live coaching on 10+ real sales calls</h4>
+              <p class="desc">In-the-moment debriefs after each call. No role-play, no whiteboard theatre — just feedback applied to deals already in your pipeline.</p>
+            </div>
+            <div class="val"><span class="lbl">Stated value</span>€4,000</div>
+          </div>
+          <div class="stack-row">
+            <div class="idx">— 04</div>
+            <div class="body">
+              <h4 class="name">Weekly 1:1 coaching for every rep</h4>
+              <p class="desc">Four weeks. Each rep gets one focused hour with me to work the deals on their own desk.</p>
+            </div>
+            <div class="val"><span class="lbl">Stated value</span>€3,000</div>
+          </div>
+          <div class="stack-row">
+            <div class="idx">— 05</div>
+            <div class="body">
+              <h4 class="name">Pipeline-by-source close-rate analysis</h4>
+              <p class="desc">A simple dashboard that finally tells you which lead source is paying you back and which is bleeding margin.</p>
+            </div>
+            <div class="val"><span class="lbl">Stated value</span>€1,500</div>
+          </div>
+          <div class="stack-row">
+            <div class="idx">— 06</div>
+            <div class="body">
+              <h4 class="name">Weekly revenue meeting, facilitated</h4>
+              <p class="desc">For four weeks I run your revenue meeting. Then you get the template — agenda, scorecard, rep questions — and you keep running it.</p>
+            </div>
+            <div class="val"><span class="lbl">Stated value</span>€1,500</div>
+          </div>
+        </div>
+        <div class="stack-foot">
+          <div class="lbl">Subtotal — deliverables</div>
+          <div class="val">€17,500</div>
+        </div>
+      </div>
+
+      <!-- Bonuses -->
+      <div class="block reveal">
+        <div class="block-head">
+          <h3 class="block-title">Bonuses <em>included</em></h3>
+          <div class="block-rhs">Stacked</div>
+        </div>
+        <div class="stack">
+          <div class="stack-row">
+            <div class="idx">＋ A</div>
+            <div class="body">
+              <h4 class="name">The €265k Deal Anatomy</h4>
+              <p class="desc">A written, blow-by-blow breakdown of the largest deal I've personally closed — what the buyer asked, what I said back, what almost killed it, what saved it.</p>
+            </div>
+            <div class="val"><span class="lbl">Stated value</span>€1,500</div>
+          </div>
+          <div class="stack-row">
+            <div class="idx">＋ B</div>
+            <div class="body">
+              <h4 class="name">30-day post-Sprint coaching call</h4>
+              <p class="desc">One follow-up session, 30 days after the Sprint ends, once you've run the playbook on your own.</p>
+            </div>
+            <div class="val"><span class="lbl">Stated value</span>€1,000</div>
+          </div>
+          <div class="stack-row">
+            <div class="idx">＋ C</div>
+            <div class="body">
+              <h4 class="name">LinkedIn outbound template library</h4>
+              <p class="desc">Ten tested outbound templates I've personally used, plus a one-page deliverability checklist for the team.</p>
+            </div>
+            <div class="val"><span class="lbl">Stated value</span>€500</div>
+          </div>
+          <div class="stack-row partner">
+            <div class="idx">＋ D</div>
+            <div class="body">
+              <h4 class="name">Legal &amp; tax review of your sales contracts</h4>
+              <p class="desc">One hour with Revo Krause — former Head of Legal at Estonia's Maksu- ja Tolliamet, currently advising the Ministry of Finance. He reads the contracts your team is about to sign more deals on, and flags what would blow up under scrutiny.</p>
+            </div>
+            <div class="val"><span class="lbl">Stated value</span>€1,500</div>
+          </div>
+        </div>
+        <div class="stack-foot">
+          <div class="lbl">Subtotal — bonuses</div>
+          <div class="val">€4,500</div>
+        </div>
+      </div>
+
+      <!-- Price reveal -->
+      <div class="price-reveal reveal" id="sprint-price">
+        <div class="value-side">
+          <span class="lbl">If bought separately</span>
+          <div class="amt">€22,000</div>
+        </div>
+        <div class="price-side">
+          <span class="lbl">Sprint price · fixed fee</span>
+          <div class="amt">€9,500</div>
+          <span class="sub">Paid 50% on start, 50% at week 4. EUR, ex-VAT.</span>
+        </div>
+      </div>
+
+      <!-- Guarantee -->
+      <div class="guarantee reveal">
+        <p>If after <strong>week 4</strong> your team isn't operating from a written sales playbook they actually use, I refund <strong>50%</strong> — no questions. If the playbook is in use but the close rate hasn't moved by <strong>week 8</strong>, I add <strong>four more weeks at no charge.</strong></p>
+      </div>
+
+      <!-- Scarcity -->
+      <div class="scarcity reveal">I run two Sprints at a time. The calendar fills six weeks ahead.</div>
+
+      <!-- Timeline -->
+      <div class="timeline reveal">
+        <div class="block-head" style="margin-bottom: 8px;">
+          <h3 class="block-title">Week-by-week</h3>
+          <div class="block-rhs">What the engagement actually looks like</div>
+        </div>
+        <div class="timeline-grid">
+          <div class="tline-step">
+            <span class="wk">Weeks 1–2</span>
+            <h5>Diagnostic</h5>
+            <p>I read the last 50 deals, sit on 10 live calls, and interview every rep individually. By end of week 2 you have the diagnostic on your desk.</p>
+          </div>
+          <div class="tline-step">
+            <span class="wk">Weeks 3–4</span>
+            <h5>Playbook + first lift</h5>
+            <p>We write the playbook together and roll it out. The team uses it on live deals immediately. First weekly revenue meeting facilitated.</p>
+          </div>
+          <div class="tline-step">
+            <span class="wk">Weeks 5–6</span>
+            <h5>Coaching at depth</h5>
+            <p>1:1 coaching with every rep, live-call feedback, objection-handling drills against real deals in pipeline. Close rate starts to move.</p>
+          </div>
+          <div class="tline-step">
+            <span class="wk">Weeks 7–8</span>
+            <h5>Handover</h5>
+            <p>Pipeline dashboard live. Revenue meeting template handed off. Final scorecard against the close-rate goal. We exit — or, on request, transition to the Operator.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="offer-cta reveal">
+        <a class="btn" href="index.html#contact">
+          Book a Sprint discovery call
+          <span class="arr">→</span>
+        </a>
+        <span class="micro">Thirty minutes. No slides. We'll know in that call.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OFFER 2 — THE OPERATOR ============ -->
+  <section class="offer" id="operator">
+    <div class="wrap-narrow">
+      <div class="offer-head reveal">
+        <div class="offer-label"><span class="num">— II</span>Monthly retainer · 6-month minimum · Max four clients</div>
+        <h2>The Embedded Revenue <em>Operator.</em></h2>
+        <p class="promise">For B2B founders in the €1–10M range who are still the de-facto Head of Revenue: I take that role <em>off your shoulders</em> one day a week. You stop being the bottleneck. <em>Revenue grows without you.</em></p>
+      </div>
+
+      <!-- Fit -->
+      <div class="fit-grid reveal">
+        <div class="fit-col yes">
+          <h5><span class="dot"></span>This is built for you if</h5>
+          <ul>
+            <li><span class="mark">+</span><span>You're the founder/CEO and still personally close the biggest deals.</span></li>
+            <li><span class="mark">+</span><span>You have a sales team but no senior sales leader above them.</span></li>
+            <li><span class="mark">+</span><span>Hiring a full-time CRO is premature, but going another year founder-led is dangerous.</span></li>
+            <li><span class="mark">+</span><span>You'd rather pay senior money for one day a week than junior money for five.</span></li>
+          </ul>
+        </div>
+        <div class="fit-col no">
+          <h5><span class="dot"></span>This is not built for you if</h5>
+          <ul>
+            <li><span class="mark">—</span><span>You want a placeholder you can ignore for 5 months and review at month 6.</span></li>
+            <li><span class="mark">—</span><span>You aren't ready to give an outside operator authority over the revenue meeting.</span></li>
+            <li><span class="mark">—</span><span>You're under €1M revenue — the Sprint is the better starting point.</span></li>
+            <li><span class="mark">—</span><span>You want a coach, not an operator. This is a seat, not advice.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- What you get monthly -->
+      <div class="block reveal">
+        <div class="block-head">
+          <h3 class="block-title">What a typical month <em>looks like</em></h3>
+          <div class="block-rhs">Stated value · monthly</div>
+        </div>
+        <div class="stack">
+          <div class="stack-row">
+            <div class="idx">— 01</div>
+            <div class="body">
+              <h4 class="name">One day a week, in the seat</h4>
+              <p class="desc">Pipeline review, deal coaching, weekly revenue meeting, rep 1:1s. You stop running the sales motion. I do.</p>
+            </div>
+            <div class="val"><span class="lbl">Per month</span>€4,500</div>
+          </div>
+          <div class="stack-row">
+            <div class="idx">— 02</div>
+            <div class="body">
+              <h4 class="name">Personal closing of strategic deals</h4>
+              <p class="desc">1–2 deals per quarter where I'm in the room as the closer, not as an advisor. Useful when a deal needs senior weight that you no longer have time to bring.</p>
+            </div>
+            <div class="val"><span class="lbl">Per quarter</span>€5,000+</div>
+          </div>
+          <div class="stack-row">
+            <div class="idx">— 03</div>
+            <div class="body">
+              <h4 class="name">Sales hiring &amp; onboarding</h4>
+              <p class="desc">I write the JD, run the interviews, and onboard the rep. You save the recruiter fee, and the rep starts in your written playbook from day one.</p>
+            </div>
+            <div class="val"><span class="lbl">Per hire saved</span>€3,000–€8,000</div>
+          </div>
+          <div class="stack-row">
+            <div class="idx">— 04</div>
+            <div class="body">
+              <h4 class="name">Monthly pricing &amp; packaging review</h4>
+              <p class="desc">One structured session a month on what to charge, how to package, and where your reps are leaving money on the table.</p>
+            </div>
+            <div class="val"><span class="lbl">Per month</span>€1,500</div>
+          </div>
+          <div class="stack-row">
+            <div class="idx">— 05</div>
+            <div class="body">
+              <h4 class="name">Real-time deal escalation</h4>
+              <p class="desc">Slack or WhatsApp. When a rep is in the middle of a deal that's slipping, I'm in the thread within the hour.</p>
+            </div>
+            <div class="val"><span class="lbl">Per month</span>€1,000</div>
+          </div>
+          <div class="stack-row partner">
+            <div class="idx">— 06</div>
+            <div class="body">
+              <h4 class="name">Quarterly legal &amp; tax checkpoint</h4>
+              <p class="desc">Once a quarter, Revo Krause reviews the structures you're growing on — contracts, tax posture, AML/KYC exposure. The things that quietly become problems while you're focused on revenue.</p>
+            </div>
+            <div class="val"><span class="lbl">Per quarter</span>€2,000</div>
+          </div>
+        </div>
+        <div class="stack-foot">
+          <div class="lbl">Monthly value · stacked</div>
+          <div class="val">€12,000+</div>
+        </div>
+      </div>
+
+      <!-- Founding bonuses -->
+      <div class="block reveal">
+        <div class="block-head">
+          <h3 class="block-title">Founding-client bonuses <em>· first three only</em></h3>
+          <div class="block-rhs">One-time, stacked</div>
+        </div>
+        <div class="stack">
+          <div class="stack-row">
+            <div class="idx">＋ A</div>
+            <div class="body">
+              <h4 class="name">B2B Sales Sprint — month one, included</h4>
+              <p class="desc">The full Sprint folded into your first month, at no extra fee. We start the engagement with the playbook already being written.</p>
+            </div>
+            <div class="val"><span class="lbl">Stated value</span>€9,500</div>
+          </div>
+          <div class="stack-row">
+            <div class="idx">＋ B</div>
+            <div class="body">
+              <h4 class="name">Four founder coaching sessions</h4>
+              <p class="desc">In your first quarter — one-to-one with me, on the decisions only you can make. Hiring, firing, pricing, where to stop selling.</p>
+            </div>
+            <div class="val"><span class="lbl">Stated value</span>€2,000</div>
+          </div>
+        </div>
+        <div class="stack-foot">
+          <div class="lbl">Founding-client bonus · stacked</div>
+          <div class="val">€11,500</div>
+        </div>
+      </div>
+
+      <!-- Price reveal -->
+      <div class="price-reveal reveal" id="operator-price">
+        <div class="value-side">
+          <span class="lbl">Monthly value, stacked</span>
+          <div class="amt">€12,000+</div>
+        </div>
+        <div class="price-side">
+          <span class="lbl">Operator retainer · monthly</span>
+          <div class="amt">€4,500<span style="font-size: 0.4em; letter-spacing: 0;">/mo</span></div>
+          <span class="sub">6-month minimum. EUR, ex-VAT. Invoiced monthly in advance.</span>
+        </div>
+      </div>
+
+      <!-- Guarantee -->
+      <div class="guarantee reveal">
+        <p>Month <strong>one</strong> is fully refundable, no questions. If by the end of month one we're not the right fit, I refund the month and we shake hands. <strong>The 6-month minimum begins from month two.</strong></p>
+      </div>
+
+      <!-- Scarcity -->
+      <div class="scarcity reveal">Maximum four Operator clients at any time. Currently one to two slots open.</div>
+
+      <!-- Timeline -->
+      <div class="timeline reveal">
+        <div class="block-head" style="margin-bottom: 8px;">
+          <h3 class="block-title">A typical engagement</h3>
+          <div class="block-rhs">First six months</div>
+        </div>
+        <div class="timeline-grid">
+          <div class="tline-step">
+            <span class="wk">Month 1</span>
+            <h5>Sprint folded in</h5>
+            <p>The Sprint runs inside month one. Diagnostic, playbook, first revenue meeting. End of month one is the refund decision point.</p>
+          </div>
+          <div class="tline-step">
+            <span class="wk">Months 2–3</span>
+            <h5>In the seat</h5>
+            <p>I'm fully embedded one day a week. Running the revenue meeting, coaching reps, sitting in on strategic deals.</p>
+          </div>
+          <div class="tline-step">
+            <span class="wk">Months 4–5</span>
+            <h5>Hiring + scale</h5>
+            <p>If headcount is on the plan, I run hiring end-to-end. New reps start in the playbook from day one.</p>
+          </div>
+          <div class="tline-step">
+            <span class="wk">Month 6+</span>
+            <h5>Hand-off or extend</h5>
+            <p>Either we extend the engagement, or we transition you to an internal Head of Sales — and I make the introduction.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="offer-cta reveal">
+        <a class="btn" href="index.html#contact">
+          Book an Operator discovery call
+          <span class="arr">→</span>
+        </a>
+        <span class="micro">Thirty minutes. The fit is decided in that call.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHICH ONE FITS -->
+  <section class="compare">
+    <div class="wrap">
+      <h2 class="reveal">Which one <em>fits.</em></h2>
+      <div class="compare-grid reveal">
+        <div class="row head">
+          <div class="cell label">&nbsp;</div>
+          <div class="cell">The Sprint</div>
+          <div class="cell">The Operator</div>
+        </div>
+        <div class="row">
+          <div class="cell label">Best when</div>
+          <div class="cell">Your team has a measurable close-rate problem you want to fix this quarter.</div>
+          <div class="cell">You're still personally running revenue, and that's the bottleneck for the next 12 months.</div>
+        </div>
+        <div class="row">
+          <div class="cell label">Length</div>
+          <div class="cell">8 weeks, fixed end date.</div>
+          <div class="cell">6-month minimum. Month 1 fully refundable.</div>
+        </div>
+        <div class="row">
+          <div class="cell label">Cost</div>
+          <div class="cell"><em>€9,500</em> fixed fee, ex-VAT.</div>
+          <div class="cell"><em>€4,500/mo</em> · €27k over 6 months.</div>
+        </div>
+        <div class="row">
+          <div class="cell label">My time</div>
+          <div class="cell">Concentrated. About one day a week, for 8 weeks.</div>
+          <div class="cell">One day a week, every week, for at least six months.</div>
+        </div>
+        <div class="row">
+          <div class="cell label">What you leave with</div>
+          <div class="cell">A written playbook, a coached team, a revenue meeting that runs itself.</div>
+          <div class="cell">A company that no longer depends on you to close deals.</div>
+        </div>
+        <div class="row">
+          <div class="cell label">Revo's seat</div>
+          <div class="cell">One hour of legal &amp; tax review, included as a bonus.</div>
+          <div class="cell">Quarterly legal &amp; tax checkpoint, included monthly.</div>
+        </div>
+        <div class="row">
+          <div class="cell label">Start with this if</div>
+          <div class="cell">You're not sure yet. The Sprint is a low-commitment way to see how we work.</div>
+          <div class="cell">You already know the answer is "yes" and you want to start now.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-grid reveal">
+        <div>
+          <h2>One <em>real</em> conversation first.</h2>
+          <p class="sub">Thirty minutes. No slides. By the end of the call we both know whether this is a Sprint, an Operator engagement, or a polite "no, but here's who you should call instead".</p>
+          <a class="btn" href="mailto:rene.richard.krause@gmail.com?subject=Krause%20%26%20Krause%20%E2%80%94%20Discovery%20call">
+            Book a discovery call
+            <span class="arr">→</span>
+          </a>
+        </div>
+        <div class="contact-details">
+          <span class="lbl">Email</span>
+          <a class="link" href="mailto:rene.richard.krause@gmail.com">rene.richard.krause@gmail.com</a>
+
+          <span class="lbl">Office</span>
+          Tallinn, Estonia
+
+          <span class="lbl">Languages</span>
+          English · Estonian
+
+          <span class="lbl">Capacity</span>
+          Two Sprints &middot; up to four Operator clients
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <div>
+        Krause Management OÜ &nbsp;·&nbsp; Registry code <span style="opacity:.6">TBD</span> &nbsp;·&nbsp; Tallinn, EE
+      </div>
+      <div class="right">
+        © 2026 Krause &amp; Krause &nbsp;·&nbsp; <a href="#" style="opacity:.7">Imprint</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    }
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
