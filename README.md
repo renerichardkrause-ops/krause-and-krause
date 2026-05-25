@@ -1,9 +1,9 @@
 # Krause & Krause
 
-Personal-brand website for **Krause & Krause** — Richard Krause and Revo Krause.
+Personal-brand website for **Krause & Krause** — René-Richard Krause and Revo Krause.
 A two-person advisory practice for Estonian B2B founders in the €1–10M range.
 
-- **Richard Krause** — Revenue, sales, go-to-market
+- **René-Richard Krause** — Revenue, sales, go-to-market
 - **Revo Krause** — Legal, tax, regulatory, change management
 
 ## Stack
@@ -32,7 +32,6 @@ Drag the folder into any static host — GitHub Pages, Cloudflare Pages, Vercel,
 
 ## To do before going public
 
-- [ ] Real portraits for Richard and Revo (the `R` monograms are placeholders)
 - [ ] Final domain
 - [ ] Replace the `mailto:` with a Cal.com / SavvyCal embed when a booking tool is chosen
 - [ ] Fill the registry code + registered address in the footer imprint

@@ -4,7 +4,12 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Krause & Krause — Coaches and advisors for Estonian companies</title>
-<meta name="description" content="Krause & Krause. Richard Krause grows the revenue. Revo Krause makes sure the legal, tax, and organisational foundations underneath it are built to last. Advisors to Estonian B2B founders in the €1–10M range." />
+<meta name="description" content="Krause & Krause. René-Richard Krause grows the revenue. Revo Krause makes sure the legal, tax, and organisational foundations underneath it are built to last. Advisors to Estonian B2B founders in the €1–10M range." />
+
+<meta property="og:title" content="Krause & Krause — René-Richard & Revo Krause" />
+<meta property="og:description" content="Two cousins. One advisory practice for Estonian B2B founders. Revenue, legal, tax and change — built together." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://renerichardkrause-ops.github.io/krause-and-krause/" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -256,39 +261,37 @@
     aspect-ratio: 4 / 5;
     background: var(--paper-warm);
     border: 1px solid var(--rule-strong);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
     overflow: hidden;
     margin-bottom: 28px;
   }
+  .portrait img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: saturate(0.9) contrast(1.02);
+  }
   .portrait::after {
     content: "";
     position: absolute;
-    inset: 12px;
-    border: 1px solid var(--rule);
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 55%, rgba(26,22,18,0.45) 100%);
     pointer-events: none;
-  }
-  .portrait .monogram {
-    font-family: var(--display);
-    font-style: italic;
-    font-size: clamp(120px, 14vw, 200px);
-    line-height: 1;
-    color: var(--accent);
-    letter-spacing: -0.02em;
-    position: relative;
-    z-index: 1;
   }
   .portrait .caption {
     position: absolute;
-    bottom: 22px;
-    left: 22px;
+    bottom: 18px;
+    left: 20px;
+    right: 20px;
     font-family: var(--mono);
     font-size: 10px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--ink-mute);
+    color: rgba(255,255,255,0.92);
     z-index: 1;
   }
   .profile h3 {
@@ -568,13 +571,13 @@
         <div class="reveal">
           <div class="eyebrow">Management &amp; Consulting · Tallinn</div>
           <h1 class="headline">
-            Richard <span class="amp">&amp;</span>
+            René-Richard <span class="amp">&amp;</span>
             <span class="second">Revo Krause</span>
           </h1>
         </div>
         <div class="hero-right reveal" style="transition-delay: 120ms;">
           <p class="lede">
-            Two cousins. One practice. Richard grows <em>the revenue;</em> Revo makes sure the <em>legal, tax and organisational</em> foundations underneath it are built to last.
+            Two cousins. One practice. René-Richard grows <em>the revenue;</em> Revo makes sure the <em>legal, tax and organisational</em> foundations underneath it are built to last.
           </p>
           <div class="cta-row">
             <a class="btn" href="#contact">
@@ -599,10 +602,10 @@
       <div class="profiles">
         <article class="profile reveal">
           <div class="portrait">
-            <div class="monogram">R</div>
-            <div class="caption">Richard Krause — Tallinn</div>
+            <img src="img/richard-krause.jpg" alt="Portrait of René-Richard Krause" loading="lazy" />
+            <div class="caption">René-Richard Krause — Tallinn</div>
           </div>
-          <h3>Richard Krause</h3>
+          <h3>René-Richard Krause</h3>
           <div class="role">Revenue · Sales · Go-to-market</div>
           <p>Five years as Sales &amp; Revenue Manager at a 600-unit Estonian operator. Grew topline from €1.5M to €6M and lifted rep close rates from 20% to 35%+ through coaching and process design. Carries a quota; doesn't just advise from the sidelines.</p>
           <p>Works in English (C2) and Estonian. Closes B2B deals in the €100k–€300k range himself when the engagement calls for it.</p>
@@ -624,7 +627,7 @@
 
         <article class="profile reveal" style="transition-delay: 120ms;">
           <div class="portrait">
-            <div class="monogram">R</div>
+            <img src="img/revo-krause.jpg" alt="Portrait of Revo Krause" loading="lazy" />
             <div class="caption">Revo Krause — Tallinn</div>
           </div>
           <h3>Revo Krause</h3>
@@ -662,7 +665,7 @@
         <div class="practice reveal">
           <span class="practice-num">— I</span>
           <h4>Grow the revenue engine</h4>
-          <p>Richard's seat. Diagnostic of the last fifty deals, a written sales playbook the team actually uses, weekly coaching of the reps, and — when it helps — Richard sitting in the chair to close one or two strategic deals himself.</p>
+          <p>René-Richard's seat. Diagnostic of the last fifty deals, a written sales playbook the team actually uses, weekly coaching of the reps, and — when it helps — René-Richard sitting in the chair to close one or two strategic deals himself.</p>
         </div>
         <div class="practice reveal" style="transition-delay: 100ms;">
           <span class="practice-num">— II</span>
