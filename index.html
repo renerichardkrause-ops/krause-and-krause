@@ -15,6 +15,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+<!-- Cal.com popup embed -->
+<script type="text/javascript">
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "30min", {origin: "https://app.cal.com"});
+Cal.ns["30min"]("ui", {
+  "theme": "light",
+  "hideEventTypeDetails": false,
+  "layout": "month_view",
+  "cssVarsPerTheme": {
+    "light": { "cal-brand": "#8a3a1c" }
+  }
+});
+</script>
+
 <style>
   :root {
     --paper:        #efe8d8;
@@ -581,7 +595,11 @@
             Two cousins. One practice. René-Richard grows <em>the revenue;</em> Revo makes sure the <em>legal, tax and organisational</em> foundations underneath it are built to last.
           </p>
           <div class="cta-row">
-            <a class="btn" href="#contact">
+            <a class="btn"
+               href="mailto:rene.richard.krause@gmail.com?subject=Krause%20%26%20Krause%20%E2%80%94%20Discovery%20call"
+               data-cal-namespace="30min"
+               data-cal-link="rene-richard-krause-lwrvlf/30min"
+               data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"home-hero"}}'>
               Book a conversation
               <span class="arr">→</span>
             </a>
@@ -752,7 +770,11 @@
         <div>
           <h2>Let's have <em>a real conversation</em> first.</h2>
           <p class="sub">Thirty minutes, no slides, no pitch. We'll know within that call whether the three of us should keep talking.</p>
-          <a class="btn" href="mailto:rene.richard.krause@gmail.com?subject=Krause%20%26%20Krause%20—%20Discovery%20call">
+          <a class="btn"
+             href="mailto:rene.richard.krause@gmail.com?subject=Krause%20%26%20Krause%20%E2%80%94%20Discovery%20call"
+             data-cal-namespace="30min"
+             data-cal-link="rene-richard-krause-lwrvlf/30min"
+             data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"home-contact"}}'>
             Book a discovery call
             <span class="arr">→</span>
           </a>
