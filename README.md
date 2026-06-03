@@ -1,10 +1,15 @@
-# Krause & Krause
+# Krause Management
 
-Personal-brand website for **Krause & Krause** — René-Richard Krause and Revo Krause.
-A two-person advisory practice for Estonian B2B founders in the €1–10M range.
+Personal-brand website for **Krause Management** — René-Richard Krause, a
+revenue & sales advisor for Estonian B2B founders in the €1–10M range.
 
 - **René-Richard Krause** — Revenue, sales, go-to-market
-- **Revo Krause** — Legal, tax, regulatory, change management
+
+> **Note:** The site originally launched as a two-person practice ("Krause &
+> Krause", with cousin Revo Krause covering legal/tax/change). Revo can't be
+> marketed while in his current public-sector role, so the live site is
+> René-Richard solo. All of Revo's removed copy is stashed in
+> `../revo-stash.md` for a clean re-add later.
 
 ## Stack
 
