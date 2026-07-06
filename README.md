@@ -48,5 +48,6 @@ Drag the folder into any static host — GitHub Pages, Cloudflare Pages, Vercel,
 - [ ] Analytics (Plausible/GoatCounter) — needed to gauge the market
 - [ ] og:image + favicon
 - [ ] Imprint page (footer link is currently dead) or drop the link
-- [ ] Reconcile capacity claims (home says 2–3 engagements; offers says 2 Sprints + 4 Operators)
-- [ ] Soften scarcity lines until they're true ("calendar fills six weeks ahead")
+- [x] Reconcile capacity claims — unified: max 3 concurrent engagements, at most 2 Sprints
+- [x] Scarcity lines rewritten as policy statements (no fake "slots open" claims)
+- [ ] Contract clause: founding-client month-1 refund must void playbook usage rights (Sprint is folded into the refundable month 1 — otherwise the playbook can be extracted for free)
