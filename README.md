@@ -45,7 +45,8 @@ Drag the folder into any static host — GitHub Pages, Cloudflare Pages, Vercel,
 - [x] Cal.com popup booking
 - [x] Estonian translation, ET as main language
 - [x] Domain live: krausemanagement.ee (GitHub Pages custom domain, HTTPS enforced; www + github.io redirect)
-- [ ] Professional email: Google Workspace MX/DKIM configured; when the mailbox exists, swap all 7 `mailto:` links (gmail is temporary) + add SPF and DMARC TXT records at Zone.ee
+- [x] Professional email live: richard@krausemanagement.ee (Google Workspace; MX + DKIM + SPF + DMARC p=none all set at Zone.ee); all mailto: links swapped
+- [ ] DMARC upgrade path: add `rua=mailto:richard@krausemanagement.ee`, after a few clean weeks move p=none → p=quarantine
 - [ ] Analytics (Plausible/GoatCounter) — needed to gauge the market
 - [ ] og:image + favicon
 - [ ] Imprint page (footer link is currently dead) or drop the link
