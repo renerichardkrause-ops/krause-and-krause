@@ -3,6 +3,25 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Google Consent Mode v2 — defaults set before gtag.js loads -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    wait_for_update: 500
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QGGPEG941B"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-QGGPEG941B');
+  gtag('config', 'AW-18310440285');
+</script>
 <title>Krause Management – Kaks koostöömudelit</title>
 <meta name="description" content="Kaks tootestatud koostöömudelit: B2B müügisprint (8 nädalat) ja majasisene müügijuht (päev nädalas). Kirjalikud garantiid, tasu sinu olukorra järgi." />
 
@@ -28,6 +47,12 @@ Cal.ns["30min"]("ui", {
   "layout": "month_view",
   "cssVarsPerTheme": {
     "light": { "cal-brand": "#8a3a1c" }
+  }
+});
+Cal.ns["30min"]("on", {
+  action: "bookingSuccessful",
+  callback: function () {
+    gtag('event', 'generate_lead', { event_category: 'engagement', event_label: 'cal_booking' });
   }
 });
 </script>
@@ -696,6 +721,54 @@ Cal.ns["30min"]("ui", {
     .stack-row .idx { font-size: 10px; }
     .timeline-grid { grid-template-columns: 1fr; }
   }
+
+  /* ---------- Cookie consent banner ---------- */
+  .consent-banner {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    z-index: 90;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 22px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--accent);
+  }
+  .consent-banner[hidden] { display: none; }
+  .consent-banner p {
+    margin: 0;
+    font-family: var(--body);
+    font-size: 13.5px;
+    line-height: 1.55;
+    max-width: 62ch;
+    color: rgba(239, 232, 216, 0.82);
+  }
+  .consent-actions { display: flex; gap: 12px; flex-shrink: 0; }
+  .consent-actions button {
+    font-family: var(--body);
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 13px 20px;
+    border: 1px solid rgba(239, 232, 216, 0.5);
+    background: transparent;
+    color: var(--paper);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .consent-actions button:hover { border-color: var(--paper); }
+  .consent-actions button.accept { background: var(--accent); border-color: var(--accent); }
+  .consent-actions button.accept:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
+  @media (max-width: 640px) {
+    .consent-banner { padding: 20px 22px; }
+    .consent-actions { width: 100%; }
+    .consent-actions button { flex: 1; }
+  }
 </style>
 </head>
 <body>
@@ -1164,11 +1237,68 @@ Cal.ns["30min"]("ui", {
         Krause Management OÜ &nbsp;·&nbsp; Registrikood 17506985 &nbsp;·&nbsp; Tallinn
       </div>
       <div class="right">
-        © 2026 Krause Management OÜ &nbsp;·&nbsp; <a href="#" style="opacity:.7">Impressum</a>
+        © 2026 Krause Management OÜ &nbsp;·&nbsp; <a href="#" style="opacity:.7">Impressum</a> &nbsp;·&nbsp; <a href="#" id="consent-manage" style="opacity:.7">Küpsiste seaded</a>
       </div>
     </div>
   </div>
 </footer>
+
+<div class="consent-banner" id="consent-banner" hidden>
+  <p>Kasutan küpsiseid, et mõista, kuidas seda lehte kasutatakse (Google Analytics), ja mõõta reklaamide tõhusust. Valikut saad hiljem muuta.</p>
+  <div class="consent-actions">
+    <button type="button" class="reject">Ainult vajalikud</button>
+    <button type="button" class="accept">Nõustun</button>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var KEY = 'km_consent';
+    var banner = document.getElementById('consent-banner');
+    var manageLink = document.getElementById('consent-manage');
+
+    function applyConsent(status) {
+      gtag('consent', 'update', {
+        ad_storage: status,
+        ad_user_data: status,
+        ad_personalization: status,
+        analytics_storage: status
+      });
+    }
+
+    var stored = localStorage.getItem(KEY);
+    if (stored === 'granted' || stored === 'denied') {
+      applyConsent(stored);
+    } else if (banner) {
+      banner.hidden = false;
+    }
+
+    if (banner) {
+      banner.querySelector('.accept').addEventListener('click', function () {
+        localStorage.setItem(KEY, 'granted');
+        applyConsent('granted');
+        banner.hidden = true;
+      });
+      banner.querySelector('.reject').addEventListener('click', function () {
+        localStorage.setItem(KEY, 'denied');
+        applyConsent('denied');
+        banner.hidden = true;
+      });
+    }
+    if (manageLink) {
+      manageLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (banner) banner.hidden = false;
+      });
+    }
+
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        gtag('event', 'contact_click', { event_category: 'engagement', event_label: 'mailto' });
+      });
+    });
+  })();
+</script>
 
 <script>
   const io = new IntersectionObserver((entries) => {
