@@ -47,9 +47,21 @@ Drag the folder into any static host — GitHub Pages, Cloudflare Pages, Vercel,
 - [x] Domain live: krausemanagement.ee (GitHub Pages custom domain, HTTPS enforced; www + github.io redirect)
 - [x] Professional email live: richard@krausemanagement.ee (Google Workspace; MX + DKIM + SPF + DMARC p=none all set at Zone.ee); all mailto: links swapped
 - [ ] DMARC upgrade path: add `rua=mailto:richard@krausemanagement.ee`, after a few clean weeks move p=none → p=quarantine
-- [ ] Analytics (Plausible/GoatCounter) — needed to gauge the market
+- [x] Analytics: GA4 (G-QGGPEG941B) + Google Ads (AW-18310440285, Customer ID 857-451-5615) installed with Consent Mode v2; cookie banner ET/EN, `generate_lead` on Cal.com booking, `contact_click` on mailto — see "Analytics & consent" below
+- [ ] GA4 admin: mark `generate_lead` as a key event (Admin → Events), then import it into Google Ads as a conversion action (can't be done from code)
+- [ ] Google Ads: account is a shell only — do not launch a campaign until there's a client/testimonial + a few weeks of GA4 baseline data
 - [ ] og:image + favicon
 - [ ] Imprint page (footer link is currently dead) or drop the link
 - [x] Reconcile capacity claims — unified: max 3 concurrent engagements, at most 2 Sprints
 - [x] Scarcity lines rewritten as policy statements (no fake "slots open" claims)
 - [ ] Contract clause: founding-client month-1 refund must void playbook usage rights (Sprint is folded into the refundable month 1 — otherwise the playbook can be extracted for free)
+
+## Analytics & consent
+
+GA4 and Google Ads tags load on all 4 pages via `gtag.js`, with **Google Consent Mode v2**: everything defaults to `denied` and only flips to `granted` if the visitor clicks "Nõustun"/"Accept" on the cookie banner (bottom of page, reopenable via the footer "Küpsiste seaded"/"Cookie settings" link). Choice persists in `localStorage` (`km_consent`). This is a legal requirement for EEA traffic — don't remove the consent-default block or reorder it after the `gtag.js` script tag.
+
+Two custom events beyond GA4's automatic ones:
+- `generate_lead` — fires when a Cal.com popup booking completes (`bookingSuccessful`). This is the real conversion signal; stronger than the pre-existing page-view goal.
+- `contact_click` — fires on any `mailto:` link click.
+
+IDs: GA4 `G-QGGPEG941B` · Ads `AW-18310440285` · Ads Customer ID `857-451-5615`. Set up via Claude Cowork (browser agent) per `../cowork-brief-analytics-ads.md`; tags installed and verified in-browser (DebugView not yet checked live).
