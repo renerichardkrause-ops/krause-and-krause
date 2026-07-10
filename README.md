@@ -50,7 +50,10 @@ Drag the folder into any static host — GitHub Pages, Cloudflare Pages, Vercel,
 - [x] Analytics: GA4 (G-QGGPEG941B) + Google Ads (AW-18310440285, Customer ID 857-451-5615) installed with Consent Mode v2; cookie banner ET/EN, `generate_lead` on Cal.com booking, `contact_click` on mailto — see "Analytics & consent" below
 - [ ] GA4 admin: mark `generate_lead` as a key event (Admin → Events), then import it into Google Ads as a conversion action (can't be done from code)
 - [ ] Google Ads: account is a shell only — do not launch a campaign until there's a client/testimonial + a few weeks of GA4 baseline data
-- [ ] og:image + favicon
+- [x] Favicon (KM monogram, 32/180/512) + og:image 1200×630
+- [x] SEO/AI layer: JSON-LD structured data on all 4 pages, sitemap.xml (hreflang), robots.txt (AI crawlers explicitly allowed), llms.txt, rel=canonical, twitter cards
+- [ ] Google Search Console: submit `sitemap.xml`, then request indexing for / and /offers.html (user action)
+- [ ] Optional: Bing Webmaster Tools — Bing's index feeds ChatGPT search, so worth the 10 minutes
 - [ ] Imprint page (footer link is currently dead) or drop the link
 - [x] Reconcile capacity claims — unified: max 3 concurrent engagements, at most 2 Sprints
 - [x] Scarcity lines rewritten as policy statements (no fake "slots open" claims)
