@@ -53,7 +53,8 @@ Drag the folder into any static host — GitHub Pages, Cloudflare Pages, Vercel,
 - [x] Favicon (KM monogram, 32/180/512) + og:image 1200×630
 - [x] SEO/AI layer: JSON-LD structured data on all 4 pages, sitemap.xml (hreflang), robots.txt (AI crawlers explicitly allowed), llms.txt, rel=canonical, twitter cards
 - [ ] Google Search Console: submit `sitemap.xml`, then request indexing for / and /offers.html (user action)
-- [ ] Optional: Bing Webmaster Tools — Bing's index feeds ChatGPT search, so worth the 10 minutes
+- [x] Bing Webmaster Tools live (2026-07-10): site verified via BingSiteAuth.xml + msvalidate meta (keep both — removing them un-verifies), sitemap submitted, all 4 URLs pushed to the index. Account: Google SSO as richard@krausemanagement.ee
+- [ ] GSC account check: Bing's GSC import found no sites under richard@krausemanagement.ee — the Search Console property likely lives under a different Google account; consider adding richard@ as owner in GSC to keep everything on the business identity
 - [ ] Imprint page (footer link is currently dead) or drop the link
 - [x] Reconcile capacity claims — unified: max 3 concurrent engagements, at most 2 Sprints
 - [x] Scarcity lines rewritten as policy statements (no fake "slots open" claims)
