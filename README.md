@@ -60,6 +60,10 @@ Drag the folder into any static host — GitHub Pages, Cloudflare Pages, Vercel,
 - [x] Scarcity lines rewritten as policy statements (no fake "slots open" claims)
 - [ ] Contract clause: founding-client month-1 refund must void playbook usage rights (Sprint is folded into the refundable month 1 — otherwise the playbook can be extracted for free)
 
+## ROI calculator
+
+Both offers pages carry a value calculator (`#roi`, between the hero and the Sprint section): four sliders (opportunities/month, deal size via a 300 EUR - 300k value ladder, current + target close rate) computing added annual revenue, client-side only. Value-only by design — no fee appears, consistent with the price-free stance. CSS/JS byte-identical between languages; copy entries K1-K6 in `../eesti-copy-polish.md`. GA events: `calculator_used` on first interaction; bookings from it are tagged `roi-calculator` in Cal.com metadata.
+
 ## Analytics & consent
 
 GA4 and Google Ads tags load on all 4 pages via `gtag.js`, with **Google Consent Mode v2**: everything defaults to `denied` and only flips to `granted` if the visitor clicks "Nõustun"/"Accept" on the cookie banner (bottom of page, reopenable via the footer "Küpsiste seaded"/"Cookie settings" link). Choice persists in `localStorage` (`km_consent`). This is a legal requirement for EEA traffic — don't remove the consent-default block or reorder it after the `gtag.js` script tag.
