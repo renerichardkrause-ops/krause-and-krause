@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="et">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kalkulaator – prototüüp</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ---------- Harness only (not part of the transplantable block) ---------- */
+  * { box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  body {
+    margin: 0;
+    background: #efe8d8;
+    color: #1a1612;
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+  @media (max-width: 560px) { .wrap { padding: 0 22px; } }
+</style>
+</head>
+<body>
+<main>
+
+<!-- ROI-CALC-START -->
+<section class="section calc" id="roi">
+  <div class="wrap">
+    <div class="calc-label">Kalkulaator</div>
+    <h2 class="calc-head">Mida sulgemismäära kasv on <em>väärt.</em></h2>
+    <p class="calc-lede">Sisesta oma numbrid. Arvutus jookseb sinu brauseris ja midagi ei salvestata – see on illustratsioon sinu enda eeldustel.</p>
+
+    <div class="calc-grid">
+      <!-- INPUTS -->
+      <div class="calc-inputs">
+        <div class="calc-field">
+          <div class="calc-field-row">
+            <label for="calc-opps">Kvalifitseeritud müügivõimalusi kuus <span class="calc-en">(qualified opportunities)</span></label>
+            <span class="calc-readout" id="calc-opps-val">10</span>
+          </div>
+          <input type="range" id="calc-opps" min="1" max="100" step="1" value="10" aria-describedby="calc-opps-val">
+        </div>
+
+        <div class="calc-field">
+          <div class="calc-field-row">
+            <label for="calc-deal">Keskmine tehingu suurus <span class="calc-en">(average deal size)</span></label>
+            <span class="calc-readout" id="calc-deal-val">25 000 €</span>
+          </div>
+          <input type="range" id="calc-deal" min="0" max="20" step="1" value="12" aria-describedby="calc-deal-val">
+        </div>
+
+        <div class="calc-field">
+          <div class="calc-field-row">
+            <label for="calc-current">Praegune sulgemismäär <span class="calc-en">(current close rate)</span></label>
+            <span class="calc-readout" id="calc-current-val">20%</span>
+          </div>
+          <input type="range" id="calc-current" min="5" max="45" step="1" value="20" aria-describedby="calc-current-val">
+        </div>
+
+        <div class="calc-field">
+          <div class="calc-field-row">
+            <label for="calc-target">Sihitav sulgemismäär <span class="calc-en">(target close rate)</span></label>
+            <span class="calc-readout" id="calc-target-val">35%</span>
+          </div>
+          <input type="range" id="calc-target" min="6" max="50" step="1" value="35" aria-describedby="calc-target-val">
+        </div>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="calc-results" aria-live="polite">
+        <div class="calc-hero-label">Lisakäive aastas</div>
+        <div class="calc-hero-value" id="calc-delta">+450 000 €</div>
+
+        <div class="calc-row">
+          <span class="calc-row-label">Lisatehinguid aastas</span>
+          <span class="calc-row-val" id="calc-extra">+18</span>
+        </div>
+        <div class="calc-row">
+          <span class="calc-row-label">Praegune aastakäive</span>
+          <span class="calc-row-val" id="calc-current-rev">600 000 €</span>
+        </div>
+        <div class="calc-row">
+          <span class="calc-row-label">Uus aastakäive</span>
+          <span class="calc-row-val" id="calc-target-rev">1 050 000 €</span>
+        </div>
+
+        <p class="calc-footnote">Sprindi eesmärk on viia müügimeeskond 35%+ sulgemismäärani – kirjaliku garantiiga. Sinu numbrid vaatame üle tutvumiskõnes.</p>
+
+        <a class="calc-btn"
+           href="mailto:richard@krausemanagement.ee?subject=Krause%20Management%20%E2%80%93%20Tutvumisk%C3%B5ne"
+           data-cal-namespace="30min"
+           data-cal-link="rene-richard-krause-lwrvlf/30min"
+           data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"roi-calculator"}}'>
+          Broneeri tutvumiskõne <span class="arr">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .calc {
+    --paper:        #efe8d8;
+    --paper-warm:   #e7dfcb;
+    --ink:          #1a1612;
+    --ink-soft:     #3b342c;
+    --ink-mute:     #6b6155;
+    --rule:         rgba(26, 22, 18, 0.14);
+    --rule-strong:  rgba(26, 22, 18, 0.28);
+    --accent:       #8a3a1c;
+    --accent-deep:  #5e2810;
+
+    --display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+    --body:    "IBM Plex Sans", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --mono:    "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+    padding-top: 80px;
+    padding-bottom: 80px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .calc .calc-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 28px;
+  }
+
+  .calc .calc-head {
+    font-family: var(--display);
+    font-weight: 400;
+    font-size: clamp(36px, 4.2vw, 56px);
+    line-height: 1;
+    letter-spacing: -0.018em;
+    margin: 0 0 28px;
+    max-width: 18ch;
+    color: var(--ink);
+  }
+  .calc .calc-head em { font-style: italic; color: var(--accent); }
+
+  .calc .calc-lede {
+    font-family: var(--display);
+    font-size: clamp(18px, 1.8vw, 21px);
+    line-height: 1.4;
+    color: var(--ink-soft);
+    font-weight: 400;
+    max-width: 56ch;
+    margin: 0 0 40px;
+  }
+
+  .calc .calc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  /* ---------- Inputs ---------- */
+  .calc .calc-field {
+    padding: 14px 0;
+  }
+  .calc .calc-field:first-child { padding-top: 0; }
+
+  .calc .calc-field-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .calc .calc-field label {
+    font-family: var(--body);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.005em;
+    flex: 1;                 /* label block may wrap; readout stays right-aligned */
+    min-width: 0;
+  }
+  .calc .calc-en {
+    color: var(--ink-mute);
+    font-weight: 300;
+    white-space: normal;
+  }
+  .calc .calc-readout {
+    font-family: var(--mono);
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .calc input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    height: 28px;              /* real interactive box (touch target) */
+    background: transparent;   /* visible line drawn by the track pseudo-elements below */
+    outline-offset: 2px;
+    /* negative margins keep the 1px line at the same visual position as before
+       (4px below the label row, 6px above the field padding) while the 28px
+       hit area extends symmetrically around it */
+    margin: -9.5px 0 -7.5px;
+    cursor: pointer;
+  }
+  .calc input[type="range"]::-webkit-slider-runnable-track {
+    height: 1px;
+    background: var(--rule-strong);
+  }
+  .calc input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background: var(--accent);
+    border-radius: 0;
+    cursor: pointer;
+    margin-top: -6.5px;
+    transition: background 0.2s ease;
+  }
+  .calc input[type="range"]:hover::-webkit-slider-thumb { background: var(--accent-deep); }
+  .calc input[type="range"]::-moz-range-track {
+    height: 1px;
+    background: var(--rule-strong);
+  }
+  .calc input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background: var(--accent);
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .calc input[type="range"]:hover::-moz-range-thumb { background: var(--accent-deep); }
+  .calc input[type="range"]::-moz-focus-outer { border: 0; }
+  .calc input[type="range"]:focus-visible {
+    outline: 2px solid var(--accent-deep);
+  }
+
+  /* ---------- Results ---------- */
+  .calc .calc-results {
+    background: var(--paper-warm);
+    border: 1px solid var(--rule-strong);
+    padding: 36px;
+  }
+  .calc .calc-hero-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 16px;
+  }
+  .calc .calc-hero-value {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: clamp(36px, 4vw, 52px);
+    line-height: 1.05;
+    color: var(--accent);
+    letter-spacing: -0.015em;
+    margin-bottom: 28px;
+  }
+
+  .calc .calc-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 12px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .calc .calc-row:last-of-type { border-bottom: 1px solid var(--rule); }
+  .calc .calc-row-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .calc .calc-row-val {
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+
+  .calc .calc-footnote {
+    margin: 20px 0 0;
+    font-family: var(--body);
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--ink-mute);
+    max-width: 48ch;
+  }
+
+  .calc .calc-btn {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--body);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 18px 28px;
+    background: var(--ink);
+    color: var(--paper);
+    border: 1px solid var(--ink);
+    margin-top: 24px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .calc .calc-btn:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
+  .calc .calc-btn .arr { transition: transform 0.25s ease; }
+  .calc .calc-btn:hover .arr { transform: translateX(4px); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 960px) {
+    .calc { padding-top: 64px; padding-bottom: 64px; }
+    .calc .calc-grid { grid-template-columns: 1fr; gap: 40px; }
+    .calc .calc-results { padding: 28px; }
+    /* touch refinement: slightly larger thumb */
+    .calc input[type="range"]::-webkit-slider-thumb {
+      width: 16px;
+      height: 16px;
+      margin-top: -7.5px;      /* (1px track − 16px thumb) / 2 */
+    }
+    .calc input[type="range"]::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+    }
+  }
+</style>
+
+<script>
+(function () {
+  'use strict';
+
+  var oppsEl    = document.getElementById('calc-opps');
+  var dealEl    = document.getElementById('calc-deal');
+  var currentEl = document.getElementById('calc-current');
+  var targetEl  = document.getElementById('calc-target');
+
+  var oppsVal    = document.getElementById('calc-opps-val');
+  var dealVal    = document.getElementById('calc-deal-val');
+  var currentVal = document.getElementById('calc-current-val');
+  var targetVal  = document.getElementById('calc-target-val');
+
+  var deltaEl      = document.getElementById('calc-delta');
+  var extraEl      = document.getElementById('calc-extra');
+  var currentRevEl = document.getElementById('calc-current-rev');
+  var targetRevEl  = document.getElementById('calc-target-rev');
+
+  var eurFmt = new Intl.NumberFormat('et-EE', { maximumFractionDigits: 0 });
+
+  // Deal-size value ladder: the range input is index-based (0 … length-1),
+  // mapped to euro amounts so the slider spans 300 – 300 000 € sensibly.
+  var DEAL_LADDER = [300, 500, 750, 1000, 1500, 2000, 3000, 5000, 7500, 10000, 15000, 20000, 25000, 30000, 40000, 50000, 75000, 100000, 150000, 200000, 300000];
+
+  function dealFromIndex(i) {
+    return DEAL_LADDER[Math.min(Math.max(i, 0), DEAL_LADDER.length - 1)];
+  }
+
+  // ---- pure math (mirrors the spec's test vector) ----
+  function computeROI(opps, deal, current, target) {
+    var annualCurrent = opps * 12 * deal * current / 100;
+    var annualTarget  = opps * 12 * deal * target / 100;
+    var delta         = annualTarget - annualCurrent;
+    var extraDeals    = opps * 12 * (target - current) / 100;
+    return { annualCurrent: annualCurrent, annualTarget: annualTarget, delta: delta, extraDeals: extraDeals };
+  }
+
+  function formatEuro(n) {
+    return eurFmt.format(Math.round(n)) + ' €';
+  }
+
+  function formatEuroSigned(n) {
+    var sign = n < 0 ? '−' : '+';
+    return sign + eurFmt.format(Math.round(Math.abs(n))) + ' €';
+  }
+
+  function formatExtraDeals(n) {
+    var sign = n < 0 ? '−' : '+';
+    var abs = Math.abs(n);
+    if (abs < 10) {
+      return sign + abs.toLocaleString('et-EE', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+    }
+    return sign + Math.round(abs).toLocaleString('et-EE');
+  }
+
+  var trackedInteraction = false;
+  function trackFirstInteraction() {
+    if (trackedInteraction) return;
+    trackedInteraction = true;
+    if (typeof gtag === 'function') gtag('event', 'calculator_used', { event_category: 'engagement' });
+  }
+
+  function enforceConstraint(source) {
+    var current = Number(currentEl.value);
+    var target  = Number(targetEl.value);
+    if (source === 'current' && current >= target) {
+      targetEl.value = Math.min(Number(targetEl.max), current + 1);
+    } else if (source === 'target' && target <= current) {
+      targetEl.value = Math.min(Number(targetEl.max), current + 1);
+    }
+  }
+
+  function render() {
+    var opps    = Number(oppsEl.value);
+    var deal    = dealFromIndex(Number(dealEl.value));
+    var current = Number(currentEl.value);
+    var target  = Number(targetEl.value);
+
+    oppsVal.textContent    = String(opps);
+    dealVal.textContent    = formatEuro(deal);
+    currentVal.textContent = current + '%';
+    targetVal.textContent  = target + '%';
+
+    var r = computeROI(opps, deal, current, target);
+
+    deltaEl.textContent      = formatEuroSigned(r.delta);
+    extraEl.textContent      = formatExtraDeals(r.extraDeals);
+    currentRevEl.textContent = formatEuro(r.annualCurrent);
+    targetRevEl.textContent  = formatEuro(r.annualTarget);
+  }
+
+  [oppsEl, dealEl].forEach(function (el) {
+    el.addEventListener('input', function () { trackFirstInteraction(); render(); });
+  });
+  currentEl.addEventListener('input', function () { trackFirstInteraction(); enforceConstraint('current'); render(); });
+  targetEl.addEventListener('input', function () { trackFirstInteraction(); enforceConstraint('target'); render(); });
+
+  render();
+})();
+</script>
+<!-- ROI-CALC-END -->
+
+</main>
+</body>
+</html>
