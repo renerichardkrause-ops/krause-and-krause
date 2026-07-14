@@ -1200,6 +1200,81 @@ Cal.ns["30min"]("on", {
     </div>
   </section>
 
+  <section class="section calc" id="roi">
+    <div class="wrap">
+      <div class="calc-label reveal">Calculator</div>
+      <h2 class="calc-head reveal" style="transition-delay: 80ms;">What a close-rate lift is <em>worth.</em></h2>
+      <p class="calc-lede reveal" style="transition-delay: 160ms;">Set the sliders to your numbers and see how much added revenue a higher close rate would bring your business each year.</p>
+
+      <div class="calc-grid reveal" style="transition-delay: 240ms;">
+        <!-- INPUTS -->
+        <div class="calc-inputs">
+          <div class="calc-field">
+            <div class="calc-field-row">
+              <label for="calc-opps">Qualified opportunities per month</label>
+              <span class="calc-readout" id="calc-opps-val">10</span>
+            </div>
+            <input type="range" id="calc-opps" min="1" max="100" step="1" value="10" aria-describedby="calc-opps-val">
+          </div>
+
+          <div class="calc-field">
+            <div class="calc-field-row">
+              <label for="calc-deal">Average deal size</label>
+              <span class="calc-readout" id="calc-deal-val">25 000 €</span>
+            </div>
+            <input type="range" id="calc-deal" min="0" max="20" step="1" value="12" aria-describedby="calc-deal-val">
+          </div>
+
+          <div class="calc-field">
+            <div class="calc-field-row">
+              <label for="calc-current">Current close rate</label>
+              <span class="calc-readout" id="calc-current-val">20%</span>
+            </div>
+            <input type="range" id="calc-current" min="5" max="45" step="1" value="20" aria-describedby="calc-current-val">
+          </div>
+
+          <div class="calc-field">
+            <div class="calc-field-row">
+              <label for="calc-target">Target close rate</label>
+              <span class="calc-readout" id="calc-target-val">35%</span>
+            </div>
+            <input type="range" id="calc-target" min="6" max="50" step="1" value="35" aria-describedby="calc-target-val">
+          </div>
+        </div>
+
+        <!-- RESULTS -->
+        <div class="calc-results" aria-live="polite">
+          <div class="calc-hero-label">Added revenue per year</div>
+          <div class="calc-hero-value" id="calc-delta">+450 000 €</div>
+
+          <div class="calc-row">
+            <span class="calc-row-label">Extra deals won per year</span>
+            <span class="calc-row-val" id="calc-extra">+18</span>
+          </div>
+          <div class="calc-row">
+            <span class="calc-row-label">Current annual revenue</span>
+            <span class="calc-row-val" id="calc-current-rev">600 000 €</span>
+          </div>
+          <div class="calc-row">
+            <span class="calc-row-label">New annual revenue</span>
+            <span class="calc-row-val" id="calc-target-rev">1 050 000 €</span>
+          </div>
+
+          <p class="calc-footnote">The Sprint's goal is to take a sales team to a 35%+ close rate – with a written guarantee. We'll go over your numbers on a discovery call. The calculation runs in your browser and nothing is saved.</p>
+
+          <a class="calc-btn"
+             href="mailto:richard@krausemanagement.ee?subject=Krause%20Management%20%E2%80%93%20Discovery%20call"
+             data-cal-namespace="30min"
+             data-cal-link="rene-richard-krause-lwrvlf/30min"
+             data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"roi-calculator"}}'>
+            Book a discovery call <span class="arr">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- ============ OFFER 1 – THE SPRINT ============ -->
   <section class="offer" id="sprint">
     <div class="wrap-narrow">
@@ -1530,80 +1605,6 @@ Cal.ns["30min"]("on", {
           <span class="arr">→</span>
         </a>
         <span class="micro">Thirty minutes. The fit is decided in that call.</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="section calc" id="roi">
-    <div class="wrap">
-      <div class="calc-label reveal">Calculator</div>
-      <h2 class="calc-head reveal" style="transition-delay: 80ms;">What a close-rate lift is <em>worth.</em></h2>
-      <p class="calc-lede reveal" style="transition-delay: 160ms;">Enter your numbers. The calculation runs in your browser and nothing is saved – an illustration built on your own assumptions.</p>
-
-      <div class="calc-grid reveal" style="transition-delay: 240ms;">
-        <!-- INPUTS -->
-        <div class="calc-inputs">
-          <div class="calc-field">
-            <div class="calc-field-row">
-              <label for="calc-opps">Qualified opportunities per month</label>
-              <span class="calc-readout" id="calc-opps-val">10</span>
-            </div>
-            <input type="range" id="calc-opps" min="1" max="100" step="1" value="10" aria-describedby="calc-opps-val">
-          </div>
-
-          <div class="calc-field">
-            <div class="calc-field-row">
-              <label for="calc-deal">Average deal size</label>
-              <span class="calc-readout" id="calc-deal-val">25 000 €</span>
-            </div>
-            <input type="range" id="calc-deal" min="0" max="20" step="1" value="12" aria-describedby="calc-deal-val">
-          </div>
-
-          <div class="calc-field">
-            <div class="calc-field-row">
-              <label for="calc-current">Current close rate</label>
-              <span class="calc-readout" id="calc-current-val">20%</span>
-            </div>
-            <input type="range" id="calc-current" min="5" max="45" step="1" value="20" aria-describedby="calc-current-val">
-          </div>
-
-          <div class="calc-field">
-            <div class="calc-field-row">
-              <label for="calc-target">Target close rate</label>
-              <span class="calc-readout" id="calc-target-val">35%</span>
-            </div>
-            <input type="range" id="calc-target" min="6" max="50" step="1" value="35" aria-describedby="calc-target-val">
-          </div>
-        </div>
-
-        <!-- RESULTS -->
-        <div class="calc-results" aria-live="polite">
-          <div class="calc-hero-label">Added revenue per year</div>
-          <div class="calc-hero-value" id="calc-delta">+450 000 €</div>
-
-          <div class="calc-row">
-            <span class="calc-row-label">Extra deals won per year</span>
-            <span class="calc-row-val" id="calc-extra">+18</span>
-          </div>
-          <div class="calc-row">
-            <span class="calc-row-label">Current annual revenue</span>
-            <span class="calc-row-val" id="calc-current-rev">600 000 €</span>
-          </div>
-          <div class="calc-row">
-            <span class="calc-row-label">New annual revenue</span>
-            <span class="calc-row-val" id="calc-target-rev">1 050 000 €</span>
-          </div>
-
-          <p class="calc-footnote">The Sprint's goal is to take a sales team to a 35%+ close rate – with a written guarantee. We'll go over your numbers on a discovery call.</p>
-
-          <a class="calc-btn"
-             href="mailto:richard@krausemanagement.ee?subject=Krause%20Management%20%E2%80%93%20Discovery%20call"
-             data-cal-namespace="30min"
-             data-cal-link="rene-richard-krause-lwrvlf/30min"
-             data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"roi-calculator"}}'>
-            Book a discovery call <span class="arr">→</span>
-          </a>
-        </div>
       </div>
     </div>
   </section>

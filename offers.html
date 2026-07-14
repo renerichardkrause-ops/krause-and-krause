@@ -1201,6 +1201,81 @@ Cal.ns["30min"]("on", {
     </div>
   </section>
 
+  <section class="section calc" id="roi">
+    <div class="wrap">
+      <div class="calc-label reveal">Kalkulaator</div>
+      <h2 class="calc-head reveal" style="transition-delay: 80ms;">Mida sulgemismäära kasv on <em>väärt.</em></h2>
+      <p class="calc-lede reveal" style="transition-delay: 160ms;">Liiguta liugurid oma numbritele ja vaata, kui palju lisakäivet kõrgem sulgemismäär sinu ettevõttele aastas tooks.</p>
+
+      <div class="calc-grid reveal" style="transition-delay: 240ms;">
+        <!-- INPUTS -->
+        <div class="calc-inputs">
+          <div class="calc-field">
+            <div class="calc-field-row">
+              <label for="calc-opps">Kvalifitseeritud müügivõimalusi kuus <span class="calc-en">(qualified opportunities)</span></label>
+              <span class="calc-readout" id="calc-opps-val">10</span>
+            </div>
+            <input type="range" id="calc-opps" min="1" max="100" step="1" value="10" aria-describedby="calc-opps-val">
+          </div>
+
+          <div class="calc-field">
+            <div class="calc-field-row">
+              <label for="calc-deal">Keskmine tehingu suurus <span class="calc-en">(average deal size)</span></label>
+              <span class="calc-readout" id="calc-deal-val">25 000 €</span>
+            </div>
+            <input type="range" id="calc-deal" min="0" max="20" step="1" value="12" aria-describedby="calc-deal-val">
+          </div>
+
+          <div class="calc-field">
+            <div class="calc-field-row">
+              <label for="calc-current">Praegune sulgemismäär <span class="calc-en">(current close rate)</span></label>
+              <span class="calc-readout" id="calc-current-val">20%</span>
+            </div>
+            <input type="range" id="calc-current" min="5" max="45" step="1" value="20" aria-describedby="calc-current-val">
+          </div>
+
+          <div class="calc-field">
+            <div class="calc-field-row">
+              <label for="calc-target">Sihitav sulgemismäär <span class="calc-en">(target close rate)</span></label>
+              <span class="calc-readout" id="calc-target-val">35%</span>
+            </div>
+            <input type="range" id="calc-target" min="6" max="50" step="1" value="35" aria-describedby="calc-target-val">
+          </div>
+        </div>
+
+        <!-- RESULTS -->
+        <div class="calc-results" aria-live="polite">
+          <div class="calc-hero-label">Lisakäive aastas</div>
+          <div class="calc-hero-value" id="calc-delta">+450 000 €</div>
+
+          <div class="calc-row">
+            <span class="calc-row-label">Lisatehinguid aastas</span>
+            <span class="calc-row-val" id="calc-extra">+18</span>
+          </div>
+          <div class="calc-row">
+            <span class="calc-row-label">Praegune aastakäive</span>
+            <span class="calc-row-val" id="calc-current-rev">600 000 €</span>
+          </div>
+          <div class="calc-row">
+            <span class="calc-row-label">Uus aastakäive</span>
+            <span class="calc-row-val" id="calc-target-rev">1 050 000 €</span>
+          </div>
+
+          <p class="calc-footnote">Sprindi eesmärk on viia müügimeeskond 35%+ sulgemismäärani – kirjaliku garantiiga. Sinu numbrid vaatame üle tutvumiskõnes. Arvutus jookseb sinu brauseris ja midagi ei salvestata.</p>
+
+          <a class="calc-btn"
+             href="mailto:richard@krausemanagement.ee?subject=Krause%20Management%20%E2%80%93%20Tutvumisk%C3%B5ne"
+             data-cal-namespace="30min"
+             data-cal-link="rene-richard-krause-lwrvlf/30min"
+             data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"roi-calculator"}}'>
+            Broneeri tutvumiskõne <span class="arr">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   <!-- ============ MUDEL 1 – SPRINT ============ -->
   <section class="offer" id="sprint">
     <div class="wrap-narrow">
@@ -1531,80 +1606,6 @@ Cal.ns["30min"]("on", {
           <span class="arr">→</span>
         </a>
         <span class="micro">Kolmkümmend minutit. Sobivus selgub selle kõne jooksul.</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="section calc" id="roi">
-    <div class="wrap">
-      <div class="calc-label reveal">Kalkulaator</div>
-      <h2 class="calc-head reveal" style="transition-delay: 80ms;">Mida sulgemismäära kasv on <em>väärt.</em></h2>
-      <p class="calc-lede reveal" style="transition-delay: 160ms;">Sisesta oma numbrid. Arvutus jookseb sinu brauseris ja midagi ei salvestata – see on illustratsioon sinu enda eeldustel.</p>
-
-      <div class="calc-grid reveal" style="transition-delay: 240ms;">
-        <!-- INPUTS -->
-        <div class="calc-inputs">
-          <div class="calc-field">
-            <div class="calc-field-row">
-              <label for="calc-opps">Kvalifitseeritud müügivõimalusi kuus <span class="calc-en">(qualified opportunities)</span></label>
-              <span class="calc-readout" id="calc-opps-val">10</span>
-            </div>
-            <input type="range" id="calc-opps" min="1" max="100" step="1" value="10" aria-describedby="calc-opps-val">
-          </div>
-
-          <div class="calc-field">
-            <div class="calc-field-row">
-              <label for="calc-deal">Keskmine tehingu suurus <span class="calc-en">(average deal size)</span></label>
-              <span class="calc-readout" id="calc-deal-val">25 000 €</span>
-            </div>
-            <input type="range" id="calc-deal" min="0" max="20" step="1" value="12" aria-describedby="calc-deal-val">
-          </div>
-
-          <div class="calc-field">
-            <div class="calc-field-row">
-              <label for="calc-current">Praegune sulgemismäär <span class="calc-en">(current close rate)</span></label>
-              <span class="calc-readout" id="calc-current-val">20%</span>
-            </div>
-            <input type="range" id="calc-current" min="5" max="45" step="1" value="20" aria-describedby="calc-current-val">
-          </div>
-
-          <div class="calc-field">
-            <div class="calc-field-row">
-              <label for="calc-target">Sihitav sulgemismäär <span class="calc-en">(target close rate)</span></label>
-              <span class="calc-readout" id="calc-target-val">35%</span>
-            </div>
-            <input type="range" id="calc-target" min="6" max="50" step="1" value="35" aria-describedby="calc-target-val">
-          </div>
-        </div>
-
-        <!-- RESULTS -->
-        <div class="calc-results" aria-live="polite">
-          <div class="calc-hero-label">Lisakäive aastas</div>
-          <div class="calc-hero-value" id="calc-delta">+450 000 €</div>
-
-          <div class="calc-row">
-            <span class="calc-row-label">Lisatehinguid aastas</span>
-            <span class="calc-row-val" id="calc-extra">+18</span>
-          </div>
-          <div class="calc-row">
-            <span class="calc-row-label">Praegune aastakäive</span>
-            <span class="calc-row-val" id="calc-current-rev">600 000 €</span>
-          </div>
-          <div class="calc-row">
-            <span class="calc-row-label">Uus aastakäive</span>
-            <span class="calc-row-val" id="calc-target-rev">1 050 000 €</span>
-          </div>
-
-          <p class="calc-footnote">Sprindi eesmärk on viia müügimeeskond 35%+ sulgemismäärani – kirjaliku garantiiga. Sinu numbrid vaatame üle tutvumiskõnes.</p>
-
-          <a class="calc-btn"
-             href="mailto:richard@krausemanagement.ee?subject=Krause%20Management%20%E2%80%93%20Tutvumisk%C3%B5ne"
-             data-cal-namespace="30min"
-             data-cal-link="rene-richard-krause-lwrvlf/30min"
-             data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"roi-calculator"}}'>
-            Broneeri tutvumiskõne <span class="arr">→</span>
-          </a>
-        </div>
       </div>
     </div>
   </section>
