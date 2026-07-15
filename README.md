@@ -62,7 +62,7 @@ Drag the folder into any static host — GitHub Pages, Cloudflare Pages, Vercel,
 
 ## ROI calculator
 
-Both offers pages carry a value calculator (`#roi`, between the hero and the Sprint section): four sliders (opportunities/month, deal size via a 300 EUR - 300k value ladder, current + target close rate) computing added annual revenue, client-side only. Value-only by design — no fee appears, consistent with the price-free stance. CSS/JS byte-identical between languages; copy entries K1-K6 in `../eesti-copy-polish.md`. GA events: `calculator_used` on first interaction; bookings from it are tagged `roi-calculator` in Cal.com metadata.
+Both offers pages carry a value calculator (anchors: `#kalkulaator` ET / `#calculator` EN, between the hero and the Sprint section): four sliders (opportunities/month, deal size via a 300 EUR - 300k value ladder, current + target close rate) computing added annual revenue, client-side only. Value-only by design — no fee appears, consistent with the price-free stance. CSS/JS byte-identical between languages; copy entries K1-K6 in `../eesti-copy-polish.md`. GA events: `calculator_used` on first interaction; bookings from it are tagged `roi-calculator` in Cal.com metadata.
 
 ## Analytics & consent
 
