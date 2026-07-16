@@ -1,48 +1,52 @@
-# krausemanagement.ee — all crawlers welcome, including AI assistants
-User-agent: *
-Allow: /
+# krausemanagement.ee — not for search engines or AI crawlers.
+# Search bots may crawl so they can see the noindex meta tag on every page,
+# but nothing on this site should be indexed.
 
-# AI / LLM crawlers, explicitly allowed
+# AI / LLM crawlers: blocked
 User-agent: GPTBot
-Allow: /
+Disallow: /
 
 User-agent: OAI-SearchBot
-Allow: /
+Disallow: /
 
 User-agent: ChatGPT-User
-Allow: /
+Disallow: /
 
 User-agent: ClaudeBot
-Allow: /
+Disallow: /
 
 User-agent: Claude-User
-Allow: /
+Disallow: /
 
 User-agent: Claude-SearchBot
-Allow: /
+Disallow: /
 
 User-agent: PerplexityBot
-Allow: /
+Disallow: /
 
 User-agent: Perplexity-User
-Allow: /
+Disallow: /
 
 User-agent: Google-Extended
-Allow: /
+Disallow: /
 
 User-agent: Applebot-Extended
-Allow: /
+Disallow: /
 
 User-agent: CCBot
-Allow: /
+Disallow: /
 
 User-agent: meta-externalagent
-Allow: /
+Disallow: /
 
 User-agent: Bytespider
-Allow: /
+Disallow: /
 
 User-agent: Amazonbot
-Allow: /
+Disallow: /
 
-Sitemap: https://krausemanagement.ee/sitemap.xml
+# Everyone else (incl. Googlebot/Bingbot): crawling allowed so the
+# noindex directive is seen and honored. Do NOT change this to Disallow —
+# blocking crawl would hide the noindex tag and stall de-indexing.
+User-agent: *
+Allow: /
