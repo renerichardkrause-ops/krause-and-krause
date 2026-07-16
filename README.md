@@ -23,6 +23,16 @@ Static HTML, no build step. **Estonian is the main language** (root), English li
 
 **Pricing note:** the offers page is deliberately price-free (tailored-offer-only) to maximise inbound leads while gauging the market. The fully priced version is preserved at tag `backup-priced-offers-2026-07-06` / branch `backup/priced-offers`.
 
+> **⚠️ DELIBERATELY DE-LISTED FROM SEARCH (2026-07-16).** The site is link-only:
+> `noindex, nofollow, noarchive` on all pages, sitemap.xml + llms.txt removed,
+> AI crawlers blocked in robots.txt, site-removal requests filed in Google Search
+> Console and Bing Webmaster Tools. **Do not "fix" this** — it is intentional
+> (Töötukassa contract constraint). Search bots must stay ALLOWED in robots.txt
+> so they can see the noindex tag. To re-list later: remove the robots meta tags,
+> restore sitemap.xml/llms.txt (git history has them at tag/commit before
+> 96a1fd1), re-allow AI crawlers, cancel the GSC/Bing removal requests, resubmit
+> the sitemap.
+
 ## Run locally
 
 ```bash
@@ -51,9 +61,9 @@ Drag the folder into any static host — GitHub Pages, Cloudflare Pages, Vercel,
 - [ ] GA4 admin: mark `generate_lead` as a key event (Admin → Events), then import it into Google Ads as a conversion action (can't be done from code)
 - [ ] Google Ads: account is a shell only — do not launch a campaign until there's a client/testimonial + a few weeks of GA4 baseline data
 - [x] Favicon (KM monogram, 32/180/512) + og:image 1200×630
-- [x] SEO/AI layer: JSON-LD structured data on all 4 pages, sitemap.xml (hreflang), robots.txt (AI crawlers explicitly allowed), llms.txt, rel=canonical, twitter cards
-- [x] Google Search Console live (2026-07-16): Domain property `krausemanagement.ee` under richard@krausemanagement.ee, auto-verified via Workspace DNS; sitemap Success (4 pages); indexing requested for all 4 URLs
-- [x] Bing Webmaster Tools live (2026-07-10): site verified via BingSiteAuth.xml + msvalidate meta (keep both — removing them un-verifies), sitemap submitted, all 4 URLs pushed to the index. Account: Google SSO as richard@krausemanagement.ee
+- [x] SEO/AI layer: JSON-LD structured data on all 4 pages, rel=canonical, twitter cards — **reversed 2026-07-16**: sitemap.xml + llms.txt removed, AI crawlers blocked, noindex everywhere (see de-listing note above)
+- [x] Google Search Console live (2026-07-16): Domain property `krausemanagement.ee` under richard@krausemanagement.ee, auto-verified via Workspace DNS. Later same day: **site-wide removal request filed** (Removals → prefix https://krausemanagement.ee/, ~6 months, renewable/cancellable), sitemap deleted from GSC
+- [x] Bing Webmaster Tools live (2026-07-10): site verified via BingSiteAuth.xml + msvalidate meta (keep both — removing them un-verifies). Account: Google SSO as richard@krausemanagement.ee. 2026-07-16: sitemap deleted, **whole-site directory block (URL & cache) active for 90 days** — renew if noindex hasn't fully propagated by expiry
 - [ ] Google Business Profile: "Krause Management OÜ" is verified and richard@ has manager access, but primary ownership is still on the personal gmail account — transfer Primary owner to richard@ (user action, from the personal account)
 - [ ] Imprint page (footer link is currently dead) or drop the link
 - [x] Reconcile capacity claims — unified: max 3 concurrent engagements, at most 2 Sprints
