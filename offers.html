@@ -1022,6 +1022,44 @@ Cal.ns["30min"]("on", {
       height: 16px;
     }
   }
+
+  /* ---------- Mobile nav: 2 links + burger ---------- */
+  html, body { overflow-x: clip; }
+  header.nav { position: relative; z-index: 100; }
+  .nav-burger { display: none; }
+  .nav-drawer { display: none; }
+  @media (max-width: 700px) {
+    .nav-meta { gap: 12px; }
+    .wordmark { white-space: nowrap; }
+    .wordmark .amp { display: none; }
+    .nav-meta .nav-x { display: none; }
+    .nav-burger {
+      display: inline-flex; flex-direction: column; gap: 5px;
+      background: none; border: 0; padding: 6px 0 6px 6px; cursor: pointer;
+    }
+    .nav-burger span {
+      display: block; width: 20px; height: 1.5px; background: var(--ink);
+      transition: transform 0.2s ease;
+    }
+    .nav-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(3.25px) rotate(45deg); }
+    .nav-burger[aria-expanded="true"] span:nth-child(2) { transform: translateY(-3.25px) rotate(-45deg); }
+    .nav-drawer {
+      position: absolute; left: 0; right: 0; top: calc(100% - 27px);
+      background: var(--paper); border-bottom: 1px solid var(--rule);
+      padding: 4px 22px 10px; z-index: 80;
+      display: flex; flex-direction: column;
+    }
+    .nav-drawer[hidden] { display: none; }
+    .nav-drawer a {
+      font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--ink-mute);
+      padding: 15px 0; border-bottom: 1px solid var(--rule);
+    }
+    .nav-drawer a:last-child { border-bottom: 0; }
+  }
+  @media (max-width: 359px) {
+    .nav-meta .nav-x2 { display: none; }
+  }
 </style>
 
 <script type="application/ld+json">
@@ -1169,12 +1207,19 @@ Cal.ns["30min"]("on", {
     <div class="nav-row">
       <a href="index.html"><div class="wordmark">Krause <span class="amp">Management</span></div></a>
       <nav class="nav-meta">
-        <a href="index.html#practice">Teenused</a>
-        <a href="offers.html" class="active">Koostöömudelid</a>
-        <a href="index.html#approach">Lähenemine</a>
+        <a href="index.html#practice" class="nav-x">Teenused</a>
+        <a href="offers.html" class="active nav-x2">Koostöömudelid</a>
+        <a href="index.html#approach" class="nav-x">Lähenemine</a>
         <a href="index.html#contact"><span class="dot"></span>Kontakt</a>
-        <a href="en/offers.html" lang="en" hreflang="en">EN</a>
+        <a href="en/offers.html" class="nav-x" lang="en" hreflang="en">EN</a>
+        <button class="nav-burger" type="button" aria-label="Ava menüü" aria-expanded="false" aria-controls="nav-drawer"><span></span><span></span></button>
       </nav>
+      <div class="nav-drawer" id="nav-drawer" hidden>
+        <a href="index.html#practice">Teenused</a>
+        <a href="offers.html">Koostöömudelid</a>
+        <a href="index.html#approach">Lähenemine</a>
+        <a href="en/offers.html" lang="en" hreflang="en">English</a>
+      </div>
     </div>
   </div>
 </header>
@@ -1880,5 +1925,20 @@ Cal.ns["30min"]("on", {
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
+<script>
+  (function () {
+    var b = document.querySelector('.nav-burger');
+    var d = document.getElementById('nav-drawer');
+    if (!b || !d) return;
+    b.addEventListener('click', function () {
+      var opening = d.hidden;
+      d.hidden = !opening;
+      b.setAttribute('aria-expanded', opening ? 'true' : 'false');
+    });
+    d.addEventListener('click', function (e) {
+      if (e.target.closest('a')) { d.hidden = true; b.setAttribute('aria-expanded', 'false'); }
+    });
+  })();
+</script>
 </body>
 </html>
