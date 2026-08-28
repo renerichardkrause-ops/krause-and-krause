@@ -1038,9 +1038,14 @@ Cal.ns["30min"]("on", {
   .nav-burger { display: none; }
   .nav-drawer { display: none; }
   @media (max-width: 700px) {
-    .nav-meta { gap: 12px; }
-    .wordmark { white-space: nowrap; }
-    .wordmark .amp { display: none; }
+    /* Variant 1 (Richard's pick): keep the full "Krause Management"
+       wordmark, shrink both it and the links a little so everything
+       still fits one row. Needs >=368px measured; the 370px breakpoint
+       below is the safety net for anything narrower (effectively no
+       shipping phone in 2026, but never leave it to chance). */
+    .wordmark { white-space: nowrap; font-size: 18px; }
+    .nav-meta { gap: 10px; }
+    .nav-meta a { font-size: 9px; letter-spacing: 0.07em; }
     .nav-meta .nav-x { display: none; }
     .nav-burger {
       display: inline-flex; flex-direction: column; gap: 5px;
@@ -1066,7 +1071,9 @@ Cal.ns["30min"]("on", {
     }
     .nav-drawer a:last-child { border-bottom: 0; }
   }
-  @media (max-width: 359px) {
+  @media (max-width: 370px) {
+    /* last-resort fallback below the 368px measured minimum: drop
+       Koostöömudelid rather than shrink the logo further */
     .nav-meta .nav-x2 { display: none; }
   }
 </style>
