@@ -1010,17 +1010,21 @@ Cal.ns["30min"]("on", {
     .calc { padding-top: 64px; padding-bottom: 64px; }
     .calc .calc-grid { grid-template-columns: 1fr; gap: 40px; }
     .calc .calc-results { padding: 28px; }
-    /* touch refinement: 44px hit area (platform minimum) and a thumb
-       big enough to aim at with a finger */
+    /* touch refinement: 44px platform minimum, then +30% again per
+       Richard's feedback (still missed the thumb reaching in from the
+       side) -> 57px invisible hit area. Thumb visual stays 24px - only
+       the forgiving tap zone around it grows, into the field's own
+       label-row margin above and padding below (both have room, no
+       adjacent-slider overlap: ~66px gap between fields). */
     .calc input[type="range"] {
-      height: 44px;
-      margin: -13.5px 0 -11.5px;
+      height: 57px;
+      margin: -20.5px 0 -17.5px;
       touch-action: manipulation;
     }
     .calc input[type="range"]::-webkit-slider-thumb {
       width: 24px;
       height: 24px;
-      margin-top: -11.5px;     /* (1px track − 24px thumb) / 2 */
+      margin-top: -11.5px;     /* (1px track − 24px thumb) / 2, unchanged: thumb stays centred on the track regardless of hitbox height */
     }
     .calc input[type="range"]::-moz-range-thumb {
       width: 24px;
