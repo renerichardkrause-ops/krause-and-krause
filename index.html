@@ -662,6 +662,57 @@ Cal.ns["30min"]("on", {
     .consent-actions button { flex: 1; }
   }
 
+
+  /* ---------- Homepage visuals (arvutus + 90 päeva teekaart) ---------- */
+  .viz {
+    margin-top: 56px;
+    border: 1px solid var(--rule);
+    padding: 32px 36px 28px;
+  }
+  .viz-label {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--ink-mute); margin-bottom: 24px;
+  }
+  .viz-calc-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; padding: 13px 0; }
+  .viz-calc-row + .viz-calc-row { border-top: 1px solid var(--rule); }
+  .viz-calc-name {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink-mute); width: 168px; flex-shrink: 0;
+  }
+  .viz-sq { display: flex; gap: 5px; flex-wrap: nowrap; }
+  .viz-sq span { width: 16px; height: 16px; border: 1px solid var(--rule-strong); flex-shrink: 0; }
+  .viz-sq span.f  { background: var(--ink);    border-color: var(--ink); }
+  .viz-sq span.f2 { background: var(--accent); border-color: var(--accent); }
+  .viz-sq span.h2 { background: linear-gradient(90deg, var(--accent) 50%, transparent 50%); border-color: var(--accent); }
+  .viz-calc-amt { font-family: var(--body); font-size: 14px; color: var(--ink-soft); margin-left: auto; white-space: nowrap; }
+  .viz-calc-amt strong { font-weight: 600; color: var(--ink); }
+  .viz-calc-amt.win strong { color: var(--accent); }
+  .viz-diff { margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--rule-strong); }
+  .viz-diff p { margin: 0; font-family: var(--display); font-size: clamp(19px, 2vw, 24px); font-style: italic; color: var(--ink); }
+  .viz-diff p em { color: var(--accent); }
+  .viz-note { font-family: var(--body); font-size: 12.5px; color: var(--ink-mute); margin-top: 12px; }
+  .viz-note a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+  .viz-road { display: grid; grid-template-columns: 1fr 1fr 1fr; margin-top: 10px; }
+  .viz-stop { position: relative; padding: 22px 24px 4px 0; border-top: 1px solid var(--rule-strong); }
+  .viz-stop::before {
+    content: ""; position: absolute; top: -5px; left: 0;
+    width: 9px; height: 9px; background: var(--paper); border: 1px solid var(--ink);
+  }
+  .viz-stop:last-child::before { background: var(--accent); border-color: var(--accent); }
+  .viz-stop-k { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 8px; }
+  .viz-stop h5 { font-family: var(--display); font-size: 21px; font-weight: 400; margin: 0 0 8px; color: var(--ink); }
+  .viz-stop p { font-family: var(--body); font-size: 13.5px; line-height: 1.55; color: var(--ink-soft); margin: 0; max-width: 26ch; }
+  @media (max-width: 700px) {
+    .viz { padding: 24px 20px 22px; }
+    .viz-calc-name { width: 100%; }
+    .viz-calc-amt { margin-left: 0; width: 100%; }
+    .viz-sq span { width: 14px; height: 14px; }
+    .viz-road { grid-template-columns: 1fr; }
+    .viz-stop { border-top: none; border-left: 1px solid var(--rule-strong); padding: 0 0 26px 22px; }
+    .viz-stop::before { top: 0; left: -5px; }
+    .viz-stop:last-child { padding-bottom: 4px; }
+  }
+
   /* ---------- Mobile nav: 2 links + burger ---------- */
   body { overflow-x: clip; }
   header.nav { position: relative; z-index: 100; }
@@ -930,6 +981,24 @@ Cal.ns["30min"]("on", {
         </div>
       </div>
 
+      <div class="viz reveal">
+        <div class="viz-label">Sama tiim · samad päringud · 10 pakkumist kuus</div>
+        <div class="viz-calc-row">
+          <div class="viz-calc-name">Täna · sulgemismäär 20%</div>
+          <div class="viz-sq"><span class="f"></span><span class="f"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="viz-calc-amt"><strong>2 tehingut</strong> · 10&nbsp;000&nbsp;€</div>
+        </div>
+        <div class="viz-calc-row">
+          <div class="viz-calc-name">Eesmärk · sulgemismäär 35%</div>
+          <div class="viz-sq"><span class="f2"></span><span class="f2"></span><span class="f2"></span><span class="h2"></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="viz-calc-amt win"><strong>3,5 tehingut</strong> · 17&nbsp;500&nbsp;€</div>
+        </div>
+        <div class="viz-diff">
+          <p>Vahe: <em>7&nbsp;500&nbsp;€ kuus</em> ehk 90&nbsp;000&nbsp;€ aastas.</p>
+        </div>
+        <p class="viz-note">Näites on keskmine tehing 5&nbsp;000&nbsp;€. <a href="offers.html#kalkulaator">Pane sisse oma numbrid&nbsp;→</a></p>
+      </div>
+
       <div class="practice-cta reveal" style="margin-top: 64px; padding-top: 36px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: baseline; gap: 24px; flex-wrap: wrap;">
         <p style="font-family: var(--display); font-size: clamp(22px, 2.4vw, 30px); line-height: 1.3; color: var(--ink); margin: 0; max-width: 28ch; font-style: italic;">
           Tahad täit pilti – konkreetseid tulemeid, garantiisid ja kindlat lõppkuupäeva?
@@ -958,6 +1027,26 @@ Cal.ns["30min"]("on", {
           <p>Enamik konsultante jätab sulle slide-decki. Mina jätan sulle meeskonna, kes sõlmib rohkem tehinguid, kirjaliku müügikäsiraamatu, mida päriselt kasutatakse, ja töörütmi, mida suudad ise edasi vedada.</p>
           <p>Koostööprojektid on väikesed, nimelised ja isiklikud. Võtan korraga kuni kaks-kolm ettevõtet. Töötan eesti ja inglise keeles ega teeskle firmat, mida ma ei ole.</p>
           <p>Kui vestlusest selgub, et ma ei ole sinu jaoks õige, ütlen seda kohe esimeses kõnes. See on praktika tugevus, mitte puudus.</p>
+        </div>
+      </div>
+      <div class="viz reveal">
+        <div class="viz-label">Esimesed 90 päeva</div>
+        <div class="viz-road">
+          <div class="viz-stop">
+            <div class="viz-stop-k">Kuu 1</div>
+            <h5>Nähtavus</h5>
+            <p>Müügitoru saab mõõdetavaks – iga päring, pakkumine ja tehing on kirjas.</p>
+          </div>
+          <div class="viz-stop">
+            <div class="viz-stop-k">Kuu 2</div>
+            <h5>Süsteem</h5>
+            <p>Müügikäsiraamat ja nädalarütm – tulemus ei sõltu ühest tublist inimesest.</p>
+          </div>
+          <div class="viz-stop">
+            <div class="viz-stop-k">Kuu 3</div>
+            <h5>Tulemus</h5>
+            <p>Tiim töötab rütmis ja sulgemismäär liigub 35%+ suunas.</p>
+          </div>
         </div>
       </div>
     </div>
