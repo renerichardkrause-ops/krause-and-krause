@@ -1,52 +1,48 @@
-# krausemanagement.ee — not for search engines or AI crawlers.
-# Search bots may crawl so they can see the noindex meta tag on every page,
-# but nothing on this site should be indexed.
-
-# AI / LLM crawlers: blocked
-User-agent: GPTBot
-Disallow: /
-
-User-agent: OAI-SearchBot
-Disallow: /
-
-User-agent: ChatGPT-User
-Disallow: /
-
-User-agent: ClaudeBot
-Disallow: /
-
-User-agent: Claude-User
-Disallow: /
-
-User-agent: Claude-SearchBot
-Disallow: /
-
-User-agent: PerplexityBot
-Disallow: /
-
-User-agent: Perplexity-User
-Disallow: /
-
-User-agent: Google-Extended
-Disallow: /
-
-User-agent: Applebot-Extended
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: meta-externalagent
-Disallow: /
-
-User-agent: Bytespider
-Disallow: /
-
-User-agent: Amazonbot
-Disallow: /
-
-# Everyone else (incl. Googlebot/Bingbot): crawling allowed so the
-# noindex directive is seen and honored. Do NOT change this to Disallow —
-# blocking crawl would hide the noindex tag and stall de-indexing.
+# krausemanagement.ee — all crawlers welcome, including AI assistants
 User-agent: *
 Allow: /
+
+# AI / LLM crawlers, explicitly allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+Sitemap: https://krausemanagement.ee/sitemap.xml
