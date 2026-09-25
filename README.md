@@ -32,16 +32,20 @@ Static HTML, no build step. **Estonian is the main language** (root), English li
 > `sitemap.xml` restored with refreshed `lastmod` dates, `llms.txt` restored
 > (with the €1.5M→€5.3M figure corrected, it had said €6M).
 >
-> **Two steps remain and can only be done in the browser, by René-Richard:**
-> 1. Google Search Console → Removals → cancel the site-wide removal request
->    filed 2026-07-16 (prefix `https://krausemanagement.ee/`), then Sitemaps →
->    resubmit `https://krausemanagement.ee/sitemap.xml`.
-> 2. Bing Webmaster Tools → Block URLs → remove the whole-site directory block,
->    then resubmit the sitemap.
+> **Both search consoles were cleaned up afterwards.** Removing the `noindex`
+> alone was not enough: the console-side blocks kept suppressing the site until
+> they were lifted by hand.
+> - **Google Search Console, 2026-09-24:** the site-wide removal request from
+>   2026-07-16 was cancelled (status "Request cancelled"), the sitemap was
+>   submitted (fetched, Success, 4 pages), a noindex validation was started, and
+>   indexing was requested for every page not yet indexed.
+> - **Bing Webmaster Tools, 2026-09-25:** the whole-site Directory block from
+>   2026-07-16 was deleted (0 active blocks), the sitemap was submitted (0
+>   errors, 4 URLs), and indexing was requested for all four pages.
 >
-> Until those two are done the pages stay suppressed even though the code no
-> longer asks for it. The old link-only state is recoverable from commit
-> `96a1fd1` if it is ever needed again.
+> **Do not add a removal request or a Bing block again** unless the site must be
+> hidden on purpose; either one overrides everything in the code. The old
+> link-only state is recoverable from commit `96a1fd1` if it is ever needed.
 
 ## Run locally
 
@@ -68,14 +72,14 @@ Drag the folder into any static host — GitHub Pages, Cloudflare Pages, Vercel,
 - [x] Professional email live: richard@krausemanagement.ee (Google Workspace; MX + DKIM + SPF + DMARC p=none all set at Zone.ee); all mailto: links swapped
 - [ ] DMARC upgrade path: add `rua=mailto:richard@krausemanagement.ee`, after a few clean weeks move p=none → p=quarantine
 - [x] Analytics: GA4 (G-QGGPEG941B) + Google Ads (AW-18310440285, Customer ID 857-451-5615) installed with Consent Mode v2; cookie banner ET/EN, `generate_lead` on Cal.com booking, `contact_click` on mailto — see "Analytics & consent" below
-- [ ] **Google Search Console: cancel the 2026-07-16 site-wide removal request** (Removals → prefix `https://krausemanagement.ee/`) and resubmit the sitemap — browser-only, blocks re-indexing
-- [ ] **Bing Webmaster Tools: remove the whole-site block** (Block URLs) and resubmit the sitemap — browser-only, blocks re-indexing
+- [x] **Google Search Console: cancel the 2026-07-16 site-wide removal request** (Removals → prefix `https://krausemanagement.ee/`) and resubmit the sitemap. Done 2026-09-24: request cancelled, sitemap Success (4 pages), indexing requested
+- [x] **Bing Webmaster Tools: remove the whole-site block** (Block URLs) and resubmit the sitemap. Done 2026-09-25: block deleted, sitemap submitted (4 URLs), indexing requested for all four pages
 - [ ] GA4 admin: mark `generate_lead` as a key event (Admin → Events), then import it into Google Ads as a conversion action (can't be done from code)
 - [ ] Google Ads: account is a shell only — do not launch a campaign until there's a client/testimonial + a few weeks of GA4 baseline data
 - [x] Favicon (KM monogram, 32/180/512) + og:image 1200×630
 - [x] SEO/AI layer: JSON-LD structured data on all 4 pages, rel=canonical, twitter cards — reversed 2026-07-16 (sitemap.xml + llms.txt removed, AI crawlers blocked, noindex everywhere), then **restored 2026-09-10** when the Töötukassa constraint ended: noindex gone, sitemap.xml + llms.txt back, all crawlers re-allowed
-- [x] Google Search Console live (2026-07-16): Domain property `krausemanagement.ee` under richard@krausemanagement.ee, auto-verified via Workspace DNS. Later same day: **site-wide removal request filed** (Removals → prefix https://krausemanagement.ee/, ~6 months, renewable/cancellable), sitemap deleted from GSC
-- [x] Bing Webmaster Tools live (2026-07-10): site verified via BingSiteAuth.xml + msvalidate meta (keep both — removing them un-verifies). Account: Google SSO as richard@krausemanagement.ee. 2026-07-16: sitemap deleted, **whole-site directory block (URL & cache) active for 90 days** — renew if noindex hasn't fully propagated by expiry
+- [x] Google Search Console live (2026-07-16): Domain property `krausemanagement.ee` under richard@krausemanagement.ee, auto-verified via Workspace DNS. Later same day: site-wide removal request filed (Removals → prefix https://krausemanagement.ee/), sitemap deleted from GSC. **Both reversed 2026-09-24** (request cancelled, sitemap resubmitted)
+- [x] Bing Webmaster Tools live (2026-07-10): site verified via BingSiteAuth.xml + msvalidate meta (keep both — removing them un-verifies). Account: Google SSO as richard@krausemanagement.ee. 2026-07-16: sitemap deleted, whole-site directory block (URL & cache) set for 90 days. **Both reversed 2026-09-25** (block deleted, sitemap resubmitted). Do not renew the block
 - [ ] Google Business Profile: "Krause Management OÜ" is verified and richard@ has manager access, but primary ownership is still on the personal gmail account — transfer Primary owner to richard@ (user action, from the personal account)
 - [ ] Imprint page (footer link is currently dead) or drop the link
 - [x] Reconcile capacity claims — unified: max 3 concurrent engagements, at most 2 Sprints
