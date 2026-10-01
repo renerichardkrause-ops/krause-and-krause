@@ -261,6 +261,28 @@ Cal.ns["30min"]("on", {
   .btn:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
   .btn .arr { transition: transform 0.25s ease; }
   .btn:hover .arr { transform: translateX(4px); }
+  /* Booking button (every data-cal-link CTA): two phrase-lines on the left,
+     arrow centred in the space between the text and the right edge */
+  .cta-btn { display: inline-flex; align-items: stretch; max-width: 100%; text-decoration: none; background: var(--ink); color: var(--paper); border: 1px solid var(--ink); text-align: left; }
+  .cta-btn:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
+  .cta-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .cta-btn .cta-txt { padding: 20px 0 21px 28px; font-family: var(--body); font-weight: 500; font-size: 19px; line-height: 1.28; min-width: 0; }
+  .cta-btn .cta-ln { display: block; }
+  .cta-btn .cta-end { display: flex; align-items: center; justify-content: center; padding: 0 28px; }
+  .cta-btn .arr { font-size: 22px; line-height: 1; transition: transform 0.25s ease; }
+  .cta-btn:hover .arr { transform: translateX(4px); }
+  .calc .cta-btn { margin-top: 24px; }
+  .cta-btn .cta-ph { display: inline; }
+  /* phones: three short lines so the button still hugs its text and the
+     arrow keeps equal space on both sides */
+  @media (max-width: 560px) {
+    .cta-btn .cta-txt { padding: 18px 0 19px 20px; font-size: 18px; }
+    .cta-btn .cta-ph { display: block; }
+    .cta-btn .cta-end { padding: 0 22px; }
+    .calc .cta-btn .cta-txt { padding-left: 16px; font-size: 17px; }
+    .calc .cta-btn .cta-end { padding: 0 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .cta-btn .arr { transition: none; } }
   .btn-ghost {
     background: transparent;
     color: var(--ink);
@@ -926,14 +948,11 @@ Cal.ns["30min"]("on", {
             I grow revenue for Estonian B2B founders in the <em>€1–10M</em> range – turning a founder-led sales motion into a <em>team that closes,</em> without new headcount or new tools.
           </p>
           <div class="cta-row">
-            <a class="btn"
+            <a class="cta-btn"
                href="mailto:richard@krausemanagement.ee?subject=Krause%20Management%20%E2%80%93%20Discovery%20call"
                data-cal-namespace="30min"
                data-cal-link="rene-richard-krause-lwrvlf/30min"
-               data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"home-hero"}}'>
-              Book a conversation
-              <span class="arr">→</span>
-            </a>
+               data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"home-hero"}}'><span class="cta-txt"><span class="cta-ln"><span class="cta-ph">Let's go through</span> <span class="cta-ph">your company's</span></span> <span class="cta-ln">problem areas together</span></span><span class="cta-end"><span class="arr">→</span></span></a>
             <a class="btn btn-ghost" href="#practice">See how I work</a>
           </div>
         </div>
@@ -1151,14 +1170,11 @@ Cal.ns["30min"]("on", {
         <div>
           <h2>Let's have <em>a real conversation</em> first.</h2>
           <p class="sub">Thirty minutes, no slides, no pitch. We'll know within that call whether we should keep talking.</p>
-          <a class="btn"
+          <a class="cta-btn"
              href="mailto:richard@krausemanagement.ee?subject=Krause%20Management%20%E2%80%93%20Discovery%20call"
              data-cal-namespace="30min"
              data-cal-link="rene-richard-krause-lwrvlf/30min"
-             data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"home-contact"}}'>
-            Book a discovery call
-            <span class="arr">→</span>
-          </a>
+             data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"home-contact"}}'><span class="cta-txt"><span class="cta-ln"><span class="cta-ph">Let's go through</span> <span class="cta-ph">your company's</span></span> <span class="cta-ln">problem areas together</span></span><span class="cta-end"><span class="arr">→</span></span></a>
         </div>
         <div class="contact-details">
           <span class="lbl">Email</span>

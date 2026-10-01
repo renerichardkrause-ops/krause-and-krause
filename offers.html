@@ -583,6 +583,28 @@ Cal.ns["30min"]("on", {
   .btn:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
   .btn .arr { transition: transform 0.25s ease; }
   .btn:hover .arr { transform: translateX(4px); }
+  /* Booking button (every data-cal-link CTA): two phrase-lines on the left,
+     arrow centred in the space between the text and the right edge */
+  .cta-btn { display: inline-flex; align-items: stretch; max-width: 100%; text-decoration: none; background: var(--ink); color: var(--paper); border: 1px solid var(--ink); text-align: left; }
+  .cta-btn:hover { background: var(--accent-deep); border-color: var(--accent-deep); }
+  .cta-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .cta-btn .cta-txt { padding: 20px 0 21px 28px; font-family: var(--body); font-weight: 500; font-size: 19px; line-height: 1.28; min-width: 0; }
+  .cta-btn .cta-ln { display: block; }
+  .cta-btn .cta-end { display: flex; align-items: center; justify-content: center; padding: 0 28px; }
+  .cta-btn .arr { font-size: 22px; line-height: 1; transition: transform 0.25s ease; }
+  .cta-btn:hover .arr { transform: translateX(4px); }
+  .calc .cta-btn { margin-top: 24px; }
+  .cta-btn .cta-ph { display: inline; }
+  /* phones: three short lines so the button still hugs its text and the
+     arrow keeps equal space on both sides */
+  @media (max-width: 560px) {
+    .cta-btn .cta-txt { padding: 18px 0 19px 20px; font-size: 18px; }
+    .cta-btn .cta-ph { display: block; }
+    .cta-btn .cta-end { padding: 0 22px; }
+    .calc .cta-btn .cta-txt { padding-left: 16px; font-size: 17px; }
+    .calc .cta-btn .cta-end { padding: 0 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .cta-btn .arr { transition: none; } }
   .offer-cta .micro {
     font-family: var(--mono);
     font-size: 12px;
@@ -1328,13 +1350,11 @@ Cal.ns["30min"]("on", {
 
           <p class="calc-footnote">Sprindi eesmärk on viia müügimeeskond 35%+ sulgemismäärani – kirjaliku garantiiga. Sinu numbrid vaatame üle tutvumiskõnes.</p>
 
-          <a class="calc-btn"
+          <a class="cta-btn"
              href="mailto:richard@krausemanagement.ee?subject=Krause%20Management%20%E2%80%93%20Tutvumisk%C3%B5ne"
              data-cal-namespace="30min"
              data-cal-link="rene-richard-krause-lwrvlf/30min"
-             data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"roi-calculator"}}'>
-            Broneeri tutvumiskõne <span class="arr">→</span>
-          </a>
+             data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"roi-calculator"}}'><span class="cta-txt"><span class="cta-ln"><span class="cta-ph">Vaatame koos üle</span> <span class="cta-ph">su ettevõtte</span></span> <span class="cta-ln">probleemsed kohad</span></span><span class="cta-end"><span class="arr">→</span></span></a>
         </div>
       </div>
     </div>
@@ -1502,14 +1522,11 @@ Cal.ns["30min"]("on", {
 
       <!-- CTA -->
       <div class="offer-cta reveal">
-        <a class="btn"
+        <a class="cta-btn"
            href="mailto:richard@krausemanagement.ee?subject=Krause%20Management%20%E2%80%93%20Sprindi%20tutvumisk%C3%B5ne"
            data-cal-namespace="30min"
            data-cal-link="rene-richard-krause-lwrvlf/30min"
-           data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"offer-sprint"}}'>
-          Broneeri Sprindi tutvumiskõne
-          <span class="arr">→</span>
-        </a>
+           data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"offer-sprint"}}'><span class="cta-txt"><span class="cta-ln"><span class="cta-ph">Vaatame koos üle</span> <span class="cta-ph">su ettevõtte</span></span> <span class="cta-ln">probleemsed kohad</span></span><span class="cta-end"><span class="arr">→</span></span></a>
         <span class="micro">Kolmkümmend minutit. Ilma slaidideta. Selle kõne lõpuks teame.</span>
       </div>
     </div>
@@ -1662,14 +1679,11 @@ Cal.ns["30min"]("on", {
 
       <!-- CTA -->
       <div class="offer-cta reveal">
-        <a class="btn"
+        <a class="cta-btn"
            href="mailto:richard@krausemanagement.ee?subject=Krause%20Management%20%E2%80%93%20Operaatori%20tutvumisk%C3%B5ne"
            data-cal-namespace="30min"
            data-cal-link="rene-richard-krause-lwrvlf/30min"
-           data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"offer-operator"}}'>
-          Broneeri Operaatori tutvumiskõne
-          <span class="arr">→</span>
-        </a>
+           data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"offer-operator"}}'><span class="cta-txt"><span class="cta-ln"><span class="cta-ph">Vaatame koos üle</span> <span class="cta-ph">su ettevõtte</span></span> <span class="cta-ln">probleemsed kohad</span></span><span class="cta-end"><span class="arr">→</span></span></a>
         <span class="micro">Kolmkümmend minutit. Sobivus selgub selle kõne jooksul.</span>
       </div>
     </div>
@@ -1726,14 +1740,11 @@ Cal.ns["30min"]("on", {
         <div>
           <h2>Kõigepealt üks <em>päris</em> vestlus.</h2>
           <p class="sub">Kolmkümmend minutit. Ilma slaidideta. Kõne lõpuks teame mõlemad, kas see on Sprint, Operaatori koostöö või viisakas „ei – aga ütlen, kelle poole hoopis pöörduda".</p>
-          <a class="btn"
+          <a class="cta-btn"
              href="mailto:richard@krausemanagement.ee?subject=Krause%20Management%20%E2%80%93%20Tutvumisk%C3%B5ne"
              data-cal-namespace="30min"
              data-cal-link="rene-richard-krause-lwrvlf/30min"
-             data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"offers-contact"}}'>
-            Broneeri tutvumiskõne
-            <span class="arr">→</span>
-          </a>
+             data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"offers-contact"}}'><span class="cta-txt"><span class="cta-ln"><span class="cta-ph">Vaatame koos üle</span> <span class="cta-ph">su ettevõtte</span></span> <span class="cta-ln">probleemsed kohad</span></span><span class="cta-end"><span class="arr">→</span></span></a>
         </div>
         <div class="contact-details">
           <span class="lbl">E-post</span>
