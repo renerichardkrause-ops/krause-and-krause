@@ -1098,6 +1098,89 @@ Cal.ns["30min"]("on", {
        Koostöömudelid rather than shrink the logo further */
     .nav-meta .nav-x2 { display: none; }
   }
+
+  /* ---------- Videos: card + full-screen story player (2026-10-06) ---------- */
+  .kv { position: relative; display: block; width: 100%; aspect-ratio: 9 / 16; padding: 0; border: 1px solid var(--ink); background: var(--ink); overflow: hidden; cursor: pointer; text-align: left; box-shadow: 0 34px 60px -34px rgba(26,22,18,.55); }
+  .kv:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+  .kv-loop { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .kv-shade { position: absolute; left: 0; right: 0; bottom: 0; height: 30%; pointer-events: none; background: linear-gradient(to top, rgba(26,22,18,.72), rgba(26,22,18,0)); }
+  .kv-play { position: absolute; left: 14px; right: 14px; bottom: 14px; display: flex; align-items: center; gap: 12px; padding: 10px 14px 10px 10px; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 15px; font-weight: 500; transition: transform .25s ease, background .25s; }
+  .kv:hover .kv-play { background: #fff8ea; transform: translateY(-2px); }
+  .kv-play-ic { position: relative; flex: 0 0 auto; width: 38px; height: 38px; border-radius: 50%; background: var(--ink); display: grid; place-items: center; }
+  .kv-play-ic svg { width: 13px; height: 13px; margin-left: 2px; fill: var(--paper); }
+  .kv-play-ic::after { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 1.5px solid var(--accent); animation: kv-pulse 2.4s ease-out infinite; }
+  @keyframes kv-pulse { 0% { transform: scale(.85); opacity: .9; } 70%, 100% { transform: scale(1.35); opacity: 0; } }
+  .kv-play-tx { flex: 1; }
+  .kv-play-t { font-family: var(--mono); font-size: 13px; color: var(--ink-mute); font-variant-numeric: tabular-nums; }
+
+  /* home: video beside the name in the hero */
+  .hero-grid.has-video { grid-template-columns: minmax(0, 1fr) minmax(300px, 340px); grid-template-areas: "name video" "right video"; align-items: end; column-gap: 72px; row-gap: 28px; }
+  .hero-grid.has-video > .hero-name { grid-area: name; }
+  .hero-grid.has-video > .hero-right { grid-area: right; padding-bottom: 0; }
+  .hero-grid.has-video > .kv-hero { grid-area: video; align-self: center; }
+  .hero-grid.has-video .lede { max-width: 40ch; }
+
+  /* offers: video block above the calculator */
+  .kv-intro { display: grid; grid-template-columns: minmax(240px, 300px) minmax(0, 1fr); gap: 56px; align-items: center; margin: 8px 0 64px; padding-bottom: 56px; border-bottom: 1px solid var(--rule); }
+  .kv-intro h3 { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.05; margin: 0 0 26px; max-width: 18ch; text-wrap: balance; }
+  .kv-intro h3 em { color: var(--accent); }
+  .kv-figs { list-style: none; margin: 0 0 22px; padding: 0; max-width: 520px; }
+  .kv-figs li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 13px 0; border-top: 1px solid var(--rule); }
+  .kv-figs li:last-child { border-bottom: 1px solid var(--rule); }
+  .kv-figs .k { font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-mute); }
+  .kv-figs .v { font-family: var(--mono); font-size: 17px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .kv-figs .v b { font-weight: 500; color: var(--accent); }
+  .kv-down { margin: 0; font-family: var(--body); font-size: 15px; color: var(--ink-soft); }
+  .kv-down a { color: var(--ink); border-bottom: 1px solid var(--ink); text-decoration: none; }
+
+  /* full-screen story player */
+  .kv-story { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; background: rgba(20,17,14,.92); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); opacity: 0; transition: opacity .3s; }
+  .kv-story.open { opacity: 1; }
+  .kv-story .kv-frame { position: relative; height: min(92vh, 860px); height: min(92svh, 860px); aspect-ratio: 9 / 16; max-width: 100vw; background: #000; overflow: hidden; transform: scale(.95); transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+  .kv-story.open .kv-frame { transform: none; }
+  .kv-story video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #000; }  /* never crop: captions sit near the edges */
+  .kv-segs { position: absolute; top: 10px; left: 10px; right: 10px; z-index: 3; display: flex; gap: 4px; }
+  .kv-segs i { flex: var(--w) 1 0; height: 3px; background: rgba(255,255,255,.35); overflow: hidden; }
+  .kv-segs i::after { content: ""; display: block; height: 100%; width: calc(var(--p, 0) * 100%); background: #fff; }
+  .kv-who { position: absolute; top: 24px; left: 14px; right: 64px; z-index: 3; display: flex; align-items: baseline; gap: 10px; color: #fff; font-family: var(--body); font-size: 14px; text-shadow: 0 1px 3px rgba(0,0,0,.6); pointer-events: none; }
+  .kv-who b { font-weight: 500; }
+  .kv-who span { font-family: var(--mono); font-size: 11px; opacity: .85; }
+  .kv-btn { position: absolute; z-index: 4; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: rgba(0,0,0,.38); color: #fff; cursor: pointer; display: grid; place-items: center; }
+  .kv-btn svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .kv-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .kv-x { top: 16px; right: 10px; }
+  .kv-snd { right: 10px; bottom: 16px; }
+  .kv-snd .on, .kv-snd[aria-pressed="true"] .off { display: block; }
+  .kv-snd .off, .kv-snd[aria-pressed="true"] .on { display: none; }
+  .kv-zone { position: absolute; top: 70px; bottom: 76px; z-index: 2; width: 34%; padding: 0; border: 0; background: none; cursor: pointer; }
+  .kv-zone.l { left: 0; } .kv-zone.r { right: 0; }
+  .kv-zone.c { left: 34%; width: 32%; }
+  .kv-paused { position: absolute; left: 50%; top: 50%; z-index: 2; width: 74px; height: 74px; margin: -37px 0 0 -37px; border-radius: 50%; background: rgba(0,0,0,.45); display: grid; place-items: center; opacity: 0; transition: opacity .2s; pointer-events: none; }
+  .kv-paused svg { width: 26px; height: 26px; margin-left: 4px; fill: #fff; }
+  .kv-story.paused .kv-paused { opacity: 1; }
+  .kv-endcard { position: absolute; inset: 0; z-index: 5; display: flex; flex-direction: column; justify-content: flex-end; gap: 14px; padding: 24px; background: linear-gradient(to top, rgba(26,22,18,.95) 42%, rgba(26,22,18,.35)); color: var(--paper); opacity: 0; pointer-events: none; transition: opacity .45s; }
+  .kv-story.ended .kv-endcard { opacity: 1; pointer-events: auto; }
+  .kv-endcard p { margin: 0; font-family: var(--display); font-size: 24px; line-height: 1.2; }
+  .kv-endcard .cta-btn { display: flex; width: 100%; background: var(--paper); color: var(--ink); border-color: var(--paper); }
+  .kv-endcard .cta-btn .cta-txt { flex: 1 1 auto; font-size: 16px; padding: 14px 0 15px 16px; }
+  .kv-endcard .cta-btn .cta-ph { display: block; }
+  .kv-endcard .cta-btn .cta-end { padding: 0 16px; }
+  .kv-replay { align-self: flex-start; padding: 6px 0; border: 0; border-bottom: 1px solid currentColor; background: none; color: var(--paper); font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; }
+  html.kv-lock { overflow: hidden; }
+  .kv-story[hidden] { display: none; }
+
+  @media (max-width: 960px) {
+    .hero-grid.has-video { grid-template-columns: 1fr; grid-template-areas: "name" "video" "right"; row-gap: 26px; }
+    .hero-grid.has-video > .kv-hero { width: min(100%, calc(66svh * 9 / 16)); align-self: start; }
+  }
+  @media (max-width: 760px) {
+    .kv-intro { grid-template-columns: 1fr; gap: 26px; margin-bottom: 44px; padding-bottom: 40px; }
+    .kv-intro .kv-card { width: min(100%, calc(66svh * 9 / 16)); }
+    .kv-figs .v { font-size: 15px; }
+    .kv-story { background: #000; }
+    .kv-story .kv-frame { width: 100vw; height: 100vh; height: 100svh; aspect-ratio: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) { .kv-play-ic::after { animation: none; } .kv-story, .kv-story .kv-frame { transition: none; } }
 </style>
 
 <script type="application/ld+json">
@@ -1293,6 +1376,19 @@ Cal.ns["30min"]("on", {
       <div class="calc-label reveal">Kalkulaator</div>
       <h2 class="calc-head reveal" style="transition-delay: 80ms;">Mida sulgemismäära kasv on <em>väärt.</em></h2>
       <p class="calc-lede reveal" style="transition-delay: 160ms;">Liiguta liugurid oma numbritele ja vaata, kui palju lisakäivet kõrgem sulgemismäär sinu ettevõttele aastas tooks.</p>
+
+      <div class="kv-intro reveal">
+        <div class="kv-card"><button class="kv" type="button" data-story="close" aria-label="Vaata sulgemismäära videot heliga, 1 min 8 s"><video class="kv-loop" muted playsinline loop autoplay preload="metadata" poster="video/sulgemismaar-poster.jpg" aria-hidden="true" tabindex="-1"><source src="video/sulgemismaar-loop.mp4" type="video/mp4"></video><span class="kv-shade"></span><span class="kv-play"><span class="kv-play-ic"><svg viewBox="0 0 12 14" aria-hidden="true"><path d="M0 0l12 7-12 7z"/></svg></span><span class="kv-play-tx">Vaata heliga</span><span class="kv-play-t">1:08</span></span></button></div>
+        <div>
+          <h3>Väike muutus sulgemismääras, <em>suur vahe</em> aastakäibes.</h3>
+          <ul class="kv-figs">
+            <li><span class="k">Sulgemismäär</span><span class="v">20% → <b><span data-count="35" data-suf="%">35%</span></b></span></li>
+            <li><span class="k">Lisakäive kuus</span><span class="v"><b>+<span data-count="30000" data-suf=" €">30 000 €</span></b></span></li>
+            <li><span class="k">Käive aastas</span><span class="v">480 000 → <b><span data-count="840000" data-suf=" €">840 000 €</span></b></span></li>
+          </ul>
+          <p class="kv-down">Video näide: 100 pakkumist kuus, keskmine tehing 2 000 €. <a href="#calc-opps">Pane allpool oma numbrid</a>.</p>
+        </div>
+      </div>
 
       <div class="calc-grid reveal" style="transition-delay: 240ms;">
         <!-- INPUTS -->
@@ -1967,5 +2063,166 @@ Cal.ns["30min"]("on", {
     });
   })();
 </script>
+
+  <!-- VIDEO PLAYER (full screen, opened by the video cards) -->
+  <div class="kv-story" id="kv-story" role="dialog" aria-modal="true" aria-label="Video" hidden>
+    <div class="kv-frame">
+      <video playsinline preload="none"></video>
+      <div class="kv-segs"></div>
+      <div class="kv-who"><b>René-Richard Krause</b><span></span></div>
+      <button class="kv-zone l" type="button" aria-label="Eelmine osa"></button>
+      <button class="kv-zone c" type="button" aria-label="Paus või jätka"></button>
+      <button class="kv-zone r" type="button" aria-label="Järgmine osa"></button>
+      <div class="kv-paused" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0l12 7-12 7z"/></svg></div>
+      <button class="kv-btn kv-x" type="button" aria-label="Sulge video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <button class="kv-btn kv-snd" type="button" aria-pressed="false" aria-label="Lülita heli välja"><svg class="on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg><svg class="off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M17 9.5l5 5M22 9.5l-5 5"/></svg></button>
+      <div class="kv-endcard"><p></p><a class="cta-btn"
+         href="mailto:richard@krausemanagement.ee?subject=Krause%20Management%20%E2%80%93%20Tutvumisk%C3%B5ne"
+         data-cal-namespace="30min"
+         data-cal-link="rene-richard-krause-lwrvlf/30min"
+         data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"video-end"}}'><span class="cta-txt"><span class="cta-ln"><span class="cta-ph">Vaatame koos üle</span> <span class="cta-ph">su ettevõtte</span></span> <span class="cta-ln">probleemsed kohad</span></span><span class="cta-end"><span class="arr">→</span></span></a><button class="kv-replay" type="button">Vaata uuesti</button></div>
+    </div>
+  </div>
+
+  <script>
+  // Videos: silent loop on the card, full video in a full-screen story player (2026-10-06)
+  (function () {
+    var story = document.getElementById('kv-story');
+    if (!story) return;
+    // best format this browser can play: AV1 (sharpest per MB), then HEVC (Safari/iPhone), then H.264
+    var FMT = (function () {
+      var t = document.createElement('video');
+      if (t.canPlayType('video/mp4; codecs="av01.0.08M.08"')) return '-av1.mp4';
+      if (t.canPlayType('video/mp4; codecs="hvc1.1.6.L120.90"')) return '-hevc.mp4';
+      return '.mp4';
+    })();
+    var VIDEOS = {
+      intro: { src: 'video/tutvustus' + FMT, dur: '1:45', end: 105, title: 'tutvustus',
+               segs: [0, 4.83, 19.0, 31.0, 47.9, 59.4, 95.2],
+               endText: 'Kui tundsid ennast ära, räägime.' },
+      close: { src: 'video/sulgemismaar' + FMT, dur: '1:08', end: 68, title: 'sulgemismaar',
+               segs: [0, 6.13, 14.45, 33.9, 45.3, 57.58, 63.24],
+               endText: 'Kas sa tead oma sulgemismäära? Vaatame selle koos üle.' }
+    };
+    var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var vid = story.querySelector('video'), segBox = story.querySelector('.kv-segs');
+    var snd = story.querySelector('.kv-snd'), current = null, opener = null, marks = {};
+
+    function track(name, extra) {
+      if (typeof gtag !== 'function' || !current) return;
+      var p = { video_title: current.title }; for (var k in extra || {}) p[k] = extra[k];
+      gtag('event', name, p);
+    }
+
+    // silent loops on the cards: autoplay unless the visitor prefers reduced motion
+    document.querySelectorAll('.kv-loop').forEach(function (v) {
+      v.muted = true;
+      if (reduced) { v.removeAttribute('autoplay'); v.pause(); return; }
+      var play = function () { var p = v.play(); if (p && p.catch) p.catch(function () {}); };
+      if ('IntersectionObserver' in window) {      // play only while on screen (saves battery)
+        new IntersectionObserver(function (es) { es[0].isIntersecting ? play() : v.pause(); }, { threshold: 0.2 }).observe(v);
+      } else play();
+    });
+
+    function paint() {
+      if (!current) return;
+      var t = vid.currentTime, s = current.segs;
+      [].forEach.call(segBox.children, function (el, i) {
+        var a = s[i], b = s[i + 1] || current.end;
+        el.style.setProperty('--p', t >= b ? 1 : t <= a ? 0 : (t - a) / (b - a));
+      });
+      var dur = vid.duration || current.end;
+      if (!marks.half && t / dur >= 0.5) { marks.half = true; track('video_progress', { video_percent: 50 }); }
+    }
+
+    function open(key, from) {
+      var v = VIDEOS[key]; if (!v) return;
+      opener = from || null;
+      if (!current || current !== v) {
+        current = v; marks = {};
+        vid.src = v.src; vid.currentTime = 0;
+        segBox.innerHTML = v.segs.map(function (a, i) {
+          var b = v.segs[i + 1] || v.end; return '<i style="--w:' + (b - a).toFixed(2) + '"></i>';
+        }).join('');
+        story.querySelector('.kv-who span').textContent = v.dur;
+        story.querySelector('.kv-endcard p').textContent = v.endText;
+      }
+      story.classList.remove('ended', 'paused');
+      if (vid.ended) vid.currentTime = 0;
+      vid.muted = false; snd.setAttribute('aria-pressed', 'false'); snd.setAttribute('aria-label', 'Lülita heli välja');
+      story.hidden = false;
+      document.documentElement.classList.add('kv-lock');
+      requestAnimationFrame(function () { story.classList.add('open'); });
+      var p = vid.play(); if (p && p.catch) p.catch(function () { story.classList.add('paused'); });
+      if (!marks.play) { marks.play = true; track('video_play'); }
+      story.querySelector('.kv-x').focus({ preventScroll: true });
+    }
+    function close() {
+      if (story.hidden) return;
+      vid.pause(); story.classList.remove('open');
+      document.documentElement.classList.remove('kv-lock');
+      setTimeout(function () { story.hidden = true; }, 300);
+      if (opener) opener.focus({ preventScroll: true });
+    }
+    function jump(dir) {
+      if (!current) return;
+      var s = current.segs, t = vid.currentTime, i = 0;
+      for (var k = 0; k < s.length; k++) if (t >= s[k] - 0.3) i = k;
+      var to = dir < 0 ? s[Math.max(0, t - s[i] < 1.5 ? i - 1 : i)] : s[i + 1];
+      if (to === undefined) return;
+      story.classList.remove('ended', 'paused'); vid.currentTime = to; vid.play();
+    }
+    function togglePause() {
+      if (vid.paused) { story.classList.remove('paused'); vid.play(); }
+      else { vid.pause(); story.classList.add('paused'); }
+    }
+
+    document.querySelectorAll('[data-story]').forEach(function (b) {
+      b.addEventListener('click', function (e) { e.preventDefault(); open(b.getAttribute('data-story'), b); });
+    });
+    story.querySelector('.kv-x').addEventListener('click', close);
+    story.querySelector('.kv-zone.l').addEventListener('click', function () { jump(-1); });
+    story.querySelector('.kv-zone.r').addEventListener('click', function () { jump(1); });
+    story.querySelector('.kv-zone.c').addEventListener('click', togglePause);
+    snd.addEventListener('click', function () {
+      vid.muted = !vid.muted;
+      snd.setAttribute('aria-pressed', String(vid.muted));
+      snd.setAttribute('aria-label', vid.muted ? 'Lülita heli sisse' : 'Lülita heli välja');
+    });
+    story.querySelector('.kv-replay').addEventListener('click', function () {
+      story.classList.remove('ended', 'paused'); vid.currentTime = 0; vid.play();
+    });
+    story.querySelector('.kv-endcard .cta-btn').addEventListener('click', function () { setTimeout(close, 50); });
+    story.addEventListener('click', function (e) { if (e.target === story) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (story.hidden) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowRight') jump(1);
+      else if (e.key === 'ArrowLeft') jump(-1);
+      else if (e.key === ' ') { e.preventDefault(); togglePause(); }
+    });
+    vid.addEventListener('timeupdate', paint);
+    vid.addEventListener('ended', function () {
+      story.classList.add('ended'); paint();
+      if (!marks.done) { marks.done = true; track('video_complete'); }
+    });
+
+    // offers page: figures count up when they scroll into view
+    document.querySelectorAll('.kv-figs [data-count]').forEach(function (n) {
+      if (reduced || !('IntersectionObserver' in window)) return;
+      var to = parseInt(n.getAttribute('data-count'), 10), suf = n.getAttribute('data-suf') || '';
+      n.textContent = '0' + suf;
+      new IntersectionObserver(function (es, io) {
+        if (!es[0].isIntersecting) return; io.disconnect();
+        var t0 = performance.now();
+        (function tick(now) {
+          var p = Math.min(1, (now - t0) / 1400), e = 1 - Math.pow(1 - p, 3);
+          n.textContent = Math.round(to * e).toLocaleString('et-EE').replace(/\s/g, ' ') + suf;
+          if (p < 1) requestAnimationFrame(tick);
+        })(t0);
+      }, { threshold: 0.6 }).observe(n);
+    });
+  })();
+  </script>
 </body>
 </html>
