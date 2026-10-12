@@ -54,6 +54,14 @@
 <script type="text/javascript">
 (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
 Cal("init", "30min", {origin: "https://app.cal.com"});
+// Booking buttons open the Cal.com popup and never follow their own link (it used to open an email as well).
+// The link itself, the Cal.com booking page, is only the fallback for when the popup never appears.
+document.addEventListener('click', function (e) {
+  var el = e.target && e.target.closest ? e.target.closest('a[data-cal-link]') : null;
+  if (!el || e.button || e.ctrlKey || e.metaKey || e.shiftKey) return;
+  e.preventDefault();
+  setTimeout(function () { if (!document.querySelector('cal-modal-box')) location.href = el.href; }, 2500);
+}, true);
 Cal.ns["30min"]("ui", {
   "theme": "light",
   "hideEventTypeDetails": false,
@@ -1036,7 +1044,7 @@ Cal.ns["30min"]("on", {
           </p>
           <div class="cta-row">
             <a class="cta-btn"
-               href="mailto:richard@krausemanagement.ee?subject=Krause%20Management%20%E2%80%93%20Tutvumisk%C3%B5ne"
+               href="https://cal.com/rene-richard-krause-lwrvlf/30min"
                data-cal-namespace="30min"
                data-cal-link="rene-richard-krause-lwrvlf/30min"
                data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"home-hero"}}'><span class="cta-txt"><span class="cta-ln"><span class="cta-ph">Vaatame koos üle</span> <span class="cta-ph">su ettevõtte</span></span> <span class="cta-ln">probleemsed kohad</span></span><span class="cta-end"><span class="arr">→</span></span></a>
@@ -1258,7 +1266,7 @@ Cal.ns["30min"]("on", {
           <h2>Alustame <em>päris vestlusest.</em></h2>
           <p class="sub">Kolmkümmend minutit, ilma slaidide ja müügijututa. Selle kõne lõpuks teame mõlemad, kas on mõtet edasi rääkida.</p>
           <a class="cta-btn"
-             href="mailto:richard@krausemanagement.ee?subject=Krause%20Management%20%E2%80%93%20Tutvumisk%C3%B5ne"
+             href="https://cal.com/rene-richard-krause-lwrvlf/30min"
              data-cal-namespace="30min"
              data-cal-link="rene-richard-krause-lwrvlf/30min"
              data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"home-contact"}}'><span class="cta-txt"><span class="cta-ln"><span class="cta-ph">Vaatame koos üle</span> <span class="cta-ph">su ettevõtte</span></span> <span class="cta-ln">probleemsed kohad</span></span><span class="cta-end"><span class="arr">→</span></span></a>
@@ -1411,7 +1419,7 @@ Cal.ns["30min"]("on", {
       <button class="kv-btn kv-x" type="button" aria-label="Sulge video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
       <button class="kv-btn kv-snd" type="button" aria-pressed="false" aria-label="Lülita heli välja"><svg class="on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></svg><svg class="off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path d="M17 9.5l5 5M22 9.5l-5 5"/></svg></button>
       <div class="kv-endcard"><p></p><a class="cta-btn"
-         href="mailto:richard@krausemanagement.ee?subject=Krause%20Management%20%E2%80%93%20Tutvumisk%C3%B5ne"
+         href="https://cal.com/rene-richard-krause-lwrvlf/30min"
          data-cal-namespace="30min"
          data-cal-link="rene-richard-krause-lwrvlf/30min"
          data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"video-end"}}'><span class="cta-txt"><span class="cta-ln"><span class="cta-ph">Vaatame koos üle</span> <span class="cta-ph">su ettevõtte</span></span> <span class="cta-ln">probleemsed kohad</span></span><span class="cta-end"><span class="arr">→</span></span></a><button class="kv-replay" type="button">Vaata uuesti</button></div>

@@ -53,6 +53,14 @@
 <script type="text/javascript">
 (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
 Cal("init", "30min", {origin: "https://app.cal.com"});
+// Booking buttons open the Cal.com popup and never follow their own link (it used to open an email as well).
+// The link itself, the Cal.com booking page, is only the fallback for when the popup never appears.
+document.addEventListener('click', function (e) {
+  var el = e.target && e.target.closest ? e.target.closest('a[data-cal-link]') : null;
+  if (!el || e.button || e.ctrlKey || e.metaKey || e.shiftKey) return;
+  e.preventDefault();
+  setTimeout(function () { if (!document.querySelector('cal-modal-box')) location.href = el.href; }, 2500);
+}, true);
 Cal.ns["30min"]("ui", {
   "theme": "light",
   "hideEventTypeDetails": false,
@@ -1433,7 +1441,7 @@ Cal.ns["30min"]("on", {
           <p class="calc-footnote">The Sprint's goal is to take a sales team to a 35%+ close rate – with a written guarantee.</p>
 
           <a class="cta-btn"
-             href="mailto:richard@krausemanagement.ee?subject=Krause%20Management%20%E2%80%93%20Discovery%20call"
+             href="https://cal.com/rene-richard-krause-lwrvlf/30min"
              data-cal-namespace="30min"
              data-cal-link="rene-richard-krause-lwrvlf/30min"
              data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"roi-calculator"}}'><span class="cta-txt"><span class="cta-ln"><span class="cta-ph">Let's go through</span> <span class="cta-ph">your company's</span></span> <span class="cta-ln">problem areas together</span></span><span class="cta-end"><span class="arr">→</span></span></a>
@@ -1605,7 +1613,7 @@ Cal.ns["30min"]("on", {
       <!-- CTA -->
       <div class="offer-cta reveal">
         <a class="cta-btn"
-           href="mailto:richard@krausemanagement.ee?subject=Krause%20Management%20%E2%80%93%20Sprint%20discovery%20call"
+           href="https://cal.com/rene-richard-krause-lwrvlf/30min"
            data-cal-namespace="30min"
            data-cal-link="rene-richard-krause-lwrvlf/30min"
            data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"offer-sprint"}}'><span class="cta-txt"><span class="cta-ln"><span class="cta-ph">Let's go through</span> <span class="cta-ph">your company's</span></span> <span class="cta-ln">problem areas together</span></span><span class="cta-end"><span class="arr">→</span></span></a>
@@ -1762,7 +1770,7 @@ Cal.ns["30min"]("on", {
       <!-- CTA -->
       <div class="offer-cta reveal">
         <a class="cta-btn"
-           href="mailto:richard@krausemanagement.ee?subject=Krause%20Management%20%E2%80%93%20Operator%20discovery%20call"
+           href="https://cal.com/rene-richard-krause-lwrvlf/30min"
            data-cal-namespace="30min"
            data-cal-link="rene-richard-krause-lwrvlf/30min"
            data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"offer-operator"}}'><span class="cta-txt"><span class="cta-ln"><span class="cta-ph">Let's go through</span> <span class="cta-ph">your company's</span></span> <span class="cta-ln">problem areas together</span></span><span class="cta-end"><span class="arr">→</span></span></a>
@@ -1823,7 +1831,7 @@ Cal.ns["30min"]("on", {
           <h2>One <em>real</em> conversation first.</h2>
           <p class="sub">Thirty minutes. No slides. By the end of the call we both know whether this is a Sprint, an Operator engagement, or a polite "no, but here's who you should call instead".</p>
           <a class="cta-btn"
-             href="mailto:richard@krausemanagement.ee?subject=Krause%20Management%20%E2%80%93%20Discovery%20call"
+             href="https://cal.com/rene-richard-krause-lwrvlf/30min"
              data-cal-namespace="30min"
              data-cal-link="rene-richard-krause-lwrvlf/30min"
              data-cal-config='{"layout":"month_view","theme":"light","metadata":{"source":"offers-contact"}}'><span class="cta-txt"><span class="cta-ln"><span class="cta-ph">Let's go through</span> <span class="cta-ph">your company's</span></span> <span class="cta-ln">problem areas together</span></span><span class="cta-end"><span class="arr">→</span></span></a>
