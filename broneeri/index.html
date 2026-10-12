@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="et">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tutvumiskõne – René-Richard Krause</title>
+<!-- Booking link for leads (2026-10-12): krausemanagement.ee/broneeri sends the visitor straight to the Cal.com booking page.
+     Kept out of search; link previews (email, Messenger, LinkedIn) read the tags below, since they don't run the redirect. -->
+<meta name="robots" content="noindex, follow">
+<meta name="description" content="Vali endale sobiv aeg. Vaatame koos üle su ettevõtte probleemsed kohad.">
+<meta property="og:title" content="Tutvumiskõne – René-Richard Krause">
+<meta property="og:description" content="Vali endale sobiv aeg. Vaatame koos üle su ettevõtte probleemsed kohad.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://krausemanagement.ee/broneeri">
+<meta property="og:image" content="https://krausemanagement.ee/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://krausemanagement.ee/img/og-image.png">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
+<script>
+  // Anything after the link (?name=Mart&email=...) is passed on, so Cal.com can pre-fill the form.
+  // metadata[source]=lead-link marks the booking as coming from this link, unless the link already says otherwise.
+  (function () {
+    var q = new URLSearchParams(location.search);
+    if (!q.has('metadata[source]')) q.set('metadata[source]', 'lead-link');
+    location.replace('https://cal.com/rene-richard-krause-lwrvlf/30min?' + q.toString());
+  })();
+</script>
+<style>
+  :root { --paper: #efe8d8; --ink: #1a1612; --ink-mute: #6b6155; --accent: #8a3a1c; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 24px 16px; box-sizing: border-box;
+         background: var(--paper); color: var(--ink); font: 17px/1.5 "IBM Plex Sans", -apple-system, BlinkMacSystemFont, system-ui, sans-serif; text-align: center; }
+  p { margin: 0 0 12px; color: var(--ink-mute); }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+  <main>
+    <p>Avan René-Richardi kalendrit…</p>
+    <a href="https://cal.com/rene-richard-krause-lwrvlf/30min?metadata%5Bsource%5D=lead-link">Kui kalender ei avane, vajuta siia</a>
+  </main>
+</body>
+</html>
